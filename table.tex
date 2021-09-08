@@ -5,7 +5,7 @@
 \makesavenoteenv{tabular}
 \usepackage[backend=biber, style=alphabetic, sorting=nyt, urldate=iso]{biblatex}
 \addbibresource{bibliography.bib}
-
+\usepackage[hidelinks]{hyperref}
 
 \title{Errors found in distributed protocols}
 \date{}
@@ -51,6 +51,16 @@
 
     DPaxos & \cite{nawabDPaxosManagingData2018} & safety &
     \cite{whittakerMatchmakerPaxosReconfigurable2021} \\
+
+    JPaxos & \cite{konczakJPaxosStateMachine2011} & safety &
+    \cite{michaelRecoveringSharedObjects2017} \\
+
+    Multi-Paxos\footnote{As described in Paxos Made Live.} &
+    \cite{chandraPaxosMadeLive2007} & safety &
+    \cite{michaelRecoveringSharedObjects2017} \\
+
+    VR Revisited & \cite{liskovViewstampedReplicationRevisited2012} & safety &
+    \cite{michaelRecoveringSharedObjects2017} \\
 
     \bottomrule
 \end{tabular}

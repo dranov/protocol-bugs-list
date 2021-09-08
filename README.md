@@ -6,17 +6,19 @@ The table below is generated from `table.tex`. Please edit that file if you are 
 
 ## Table of errors
 
-
-| Protocol  |                     Reference                      |   Violation   |            Counter-example             |
-| :-------: | :------------------------------------------------: | :-----------: | :------------------------------------: |
-|   Raft    |                  \[Ongaro 2014\]                   |  safety\[1\]  |  \[Amos and Zhang 2015; Ongaro 2015\]  |
-|   Raft    |    \[Ongaro and Ousterhout 2014; Ongaro 2014\]     |   liveness    |      \[Howard and Abraham 2020\]       |
-|   Chord   |  \[Stoica et al. 2003; Liben-Nowell et al. 2002\]  | liveness\[2\] |        \[Zave 2012; Zave 2017\]        |
-|  Pastry   |           \[Rowstron and Druschel 2001\]           |    safety     | \[Azmy et al. 2016; Azmy et al. 2018\] |
-|  Zyzzyva  |      \[Kotla et al. 2007; Kotla et al. 2010\]      |    safety     |        \[Abraham et al. 2017\]         |
-| FaB Paxos | \[Martin and Alvisi 2005; Martin and Alvisi 2006\] |   liveness    |        \[Abraham et al. 2017\]         |
-|  EPaxos   |               \[Moraru et al. 2013\]               |    safety     |             \[Sutra 2020\]             |
-|  DPaxos   |               \[Nawab et al. 2018\]                |    safety     |       \[Whittaker et al. 2021\]        |
+|     Protocol     |                     Reference                      |   Violation   |            Counter-example             |
+| :--------------: | :------------------------------------------------: | :-----------: | :------------------------------------: |
+|       Raft       |                  \[Ongaro 2014\]                   |  safety\[1\]  |  \[Amos and Zhang 2015; Ongaro 2015\]  |
+|       Raft       |    \[Ongaro and Ousterhout 2014; Ongaro 2014\]     |   liveness    |      \[Howard and Abraham 2020\]       |
+|      Chord       |  \[Stoica et al. 2003; Liben-Nowell et al. 2002\]  | liveness\[2\] |        \[Zave 2012; Zave 2017\]        |
+|      Pastry      |           \[Rowstron and Druschel 2001\]           |    safety     | \[Azmy et al. 2016; Azmy et al. 2018\] |
+|     Zyzzyva      |      \[Kotla et al. 2007; Kotla et al. 2010\]      |    safety     |        \[Abraham et al. 2017\]         |
+|    FaB Paxos     | \[Martin and Alvisi 2005; Martin and Alvisi 2006\] |   liveness    |        \[Abraham et al. 2017\]         |
+|      EPaxos      |               \[Moraru et al. 2013\]               |    safety     |             \[Sutra 2020\]             |
+|      DPaxos      |               \[Nawab et al. 2018\]                |    safety     |       \[Whittaker et al. 2021\]        |
+|      JPaxos      |              \[Kończak et al. 2011\]               |    safety     |        \[Michael et al. 2017\]         |
+| Multi-Paxos\[3\] |              \[Chandra et al. 2007\]               |    safety     |        \[Michael et al. 2017\]         |
+|   VR Revisited   |            \[Liskov and Cowling 2012\]             |    safety     |        \[Michael et al. 2017\]         |
 
 ## Footnotes
 
@@ -26,6 +28,13 @@ The table below is generated from `table.tex`. Please edit that file if you are 
 
 2.  Eventual reachability is Chord’s key correctness property.
 
+3.  As described in Paxos Made Live.
+
+## Acknowledgements
+
+The following people suggested additions to the list:
+
+- [Dan Ports](https://drkp.net/)
 
 ## References
 
@@ -64,11 +73,28 @@ Computer Programming* *158*, 64–80.
 
 </div>
 
+<div id="ref-chandraPaxosMadeLive2007">
+
+<span class="smallcaps">Chandra, T.D., Griesemer, R., and Redstone,
+J.</span> 2007. Paxos made live: An engineering perspective.
+*Proceedings of the twenty-sixth annual ACM symposium on Principles of
+distributed computing - PODC ’07*, ACM Press, 398–407.
+
+</div>
+
 <div id="ref-howardRaftDoesNot2020">
 
 <span class="smallcaps">Howard, H. and Abraham, I.</span> 2020. Raft
 does not Guarantee Liveness in the face of Network Faults.
 <https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/>.
+
+</div>
+
+<div id="ref-konczakJPaxosStateMachine2011">
+
+<span class="smallcaps">Kończak, J., Sousa Santos, N.F. de, Żurkowski,
+T., Wojciechowski, P.T., and Schiper, A.</span> 2011. *JPaxos: State
+machine replication based on the Paxos protocol*..
 
 </div>
 
@@ -97,6 +123,13 @@ distributed computing*, Association for Computing Machinery, 233–242.
 
 </div>
 
+<div id="ref-liskovViewstampedReplicationRevisited2012">
+
+<span class="smallcaps">Liskov, B. and Cowling, J.</span> 2012.
+*Viewstamped Replication Revisited*..
+
+</div>
+
 <div id="ref-martinFastByzantineConsensus2005">
 
 <span class="smallcaps">Martin, J.-P. and Alvisi, L.</span> 2005. Fast
@@ -110,6 +143,14 @@ Systems and Networks (DSN’05)*, 402–411.
 <span class="smallcaps">Martin, J.-P. and Alvisi, L.</span> 2006. Fast
 Byzantine Consensus. *IEEE Transactions on Dependable and Secure
 Computing* *3*, 3, 202–215.
+
+</div>
+
+<div id="ref-michaelRecoveringSharedObjects2017">
+
+<span class="smallcaps">Michael, E., Ports, D.R.K., Sharma, N.K., and
+Szekeres, A.</span> 2017. Recovering Shared Objects Without Stable
+Storage. 27.
 
 </div>
 

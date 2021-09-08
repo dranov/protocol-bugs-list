@@ -74,6 +74,24 @@
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="whittakerMatchmakerPaxosReconfigurable2021">[Whittaker et al. 2021]</span></td>
 </tr>
+<tr class="odd">
+<td style="text-align: center;">JPaxos</td>
+<td style="text-align: center;"><span class="citation" data-cites="konczakJPaxosStateMachine2011">[Kończak et al. 2011]</span></td>
+<td style="text-align: center;">safety</td>
+<td style="text-align: center;"><span class="citation" data-cites="michaelRecoveringSharedObjects2017">[Michael et al. 2017]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Multi-Paxos<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="chandraPaxosMadeLive2007">[Chandra et al. 2007]</span></td>
+<td style="text-align: center;">safety</td>
+<td style="text-align: center;"><span class="citation" data-cites="michaelRecoveringSharedObjects2017">[Michael et al. 2017]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">VR Revisited</td>
+<td style="text-align: center;"><span class="citation" data-cites="liskovViewstampedReplicationRevisited2012">[Liskov and Cowling 2012]</span></td>
+<td style="text-align: center;">safety</td>
+<td style="text-align: center;"><span class="citation" data-cites="michaelRecoveringSharedObjects2017">[Michael et al. 2017]</span></td>
+</tr>
 </tbody>
 </table>
 <p>(Reference list starts on the next page.)</p>
@@ -90,8 +108,14 @@
 <div id="ref-azmyMachinecheckedCorrectnessProof2018">
 <p><span class="smallcaps">Azmy, N., Merz, S., and Weidenbach, C.</span> 2018. A machine-checked correctness proof for Pastry. <em>Science of Computer Programming</em> <em>158</em>, 64–80.</p>
 </div>
+<div id="ref-chandraPaxosMadeLive2007">
+<p><span class="smallcaps">Chandra, T.D., Griesemer, R., and Redstone, J.</span> 2007. Paxos made live: An engineering perspective. <em>Proceedings of the twenty-sixth annual ACM symposium on Principles of distributed computing - PODC ’07</em>, ACM Press, 398–407.</p>
+</div>
 <div id="ref-howardRaftDoesNot2020">
 <p><span class="smallcaps">Howard, H. and Abraham, I.</span> 2020. Raft does not Guarantee Liveness in the face of Network Faults. <a href="https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/">https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/</a>.</p>
+</div>
+<div id="ref-konczakJPaxosStateMachine2011">
+<p><span class="smallcaps">Kończak, J., Sousa Santos, N.F. de, Żurkowski, T., Wojciechowski, P.T., and Schiper, A.</span> 2011. <em>JPaxos: State machine replication based on the Paxos protocol</em>..</p>
 </div>
 <div id="ref-kotlaZyzzyvaSpeculativeByzantine2007">
 <p><span class="smallcaps">Kotla, R., Alvisi, L., Dahlin, M., Clement, A., and Wong, E.</span> 2007. Zyzzyva: Speculative byzantine fault tolerance. <em>SIGOPS Oper. Syst. Rev.</em> <em>41</em>, 6, 45–58.</p>
@@ -102,11 +126,17 @@
 <div id="ref-liben-nowellAnalysisEvolutionPeertopeer2002">
 <p><span class="smallcaps">Liben-Nowell, D., Balakrishnan, H., and Karger, D.</span> 2002. Analysis of the evolution of peer-to-peer systems. <em>Proceedings of the twenty-first annual symposium on principles of distributed computing</em>, Association for Computing Machinery, 233–242.</p>
 </div>
+<div id="ref-liskovViewstampedReplicationRevisited2012">
+<p><span class="smallcaps">Liskov, B. and Cowling, J.</span> 2012. <em>Viewstamped Replication Revisited</em>..</p>
+</div>
 <div id="ref-martinFastByzantineConsensus2005">
 <p><span class="smallcaps">Martin, J.-P. and Alvisi, L.</span> 2005. Fast Byzantine Consensus. <em>2005 International Conference on Dependable Systems and Networks (DSN’05)</em>, 402–411.</p>
 </div>
 <div id="ref-martinFastByzantineConsensus2006">
 <p><span class="smallcaps">Martin, J.-P. and Alvisi, L.</span> 2006. Fast Byzantine Consensus. <em>IEEE Transactions on Dependable and Secure Computing</em> <em>3</em>, 3, 202–215.</p>
+</div>
+<div id="ref-michaelRecoveringSharedObjects2017">
+<p><span class="smallcaps">Michael, E., Ports, D.R.K., Sharma, N.K., and Szekeres, A.</span> 2017. Recovering Shared Objects Without Stable Storage. 27.</p>
 </div>
 <div id="ref-moraruThereMoreConsensus2013">
 <p><span class="smallcaps">Moraru, I., Andersen, D.G., and Kaminsky, M.</span> 2013. There is more consensus in Egalitarian parliaments. <em>Proceedings of the Twenty-Fourth ACM Symposium on Operating Systems Principles</em>, Association for Computing Machinery, 358–372.</p>
@@ -147,6 +177,7 @@
 <ol>
 <li id="fn1"><p>The single-server membership change algorithm is described in Ongaro’s PhD thesis. The paper version of Raft uses joint consensus and does not have this error.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2"><p>Eventual reachability is Chord’s key correctness property.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>As described in Paxos Made Live.<a href="#fnref3" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
 </body>
