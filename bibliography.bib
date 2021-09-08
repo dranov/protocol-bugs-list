@@ -1,0 +1,429 @@
+
+@inproceedings{ongaroSearchUnderstandableConsensus2014,
+author = {Ongaro, Diego and Ousterhout, John},
+title = {In Search of an Understandable Consensus Algorithm},
+year = {2014},
+isbn = {9781931971102},
+publisher = {USENIX Association},
+address = {USA},
+abstract = {Raft is a consensus algorithm for managing a replicated log. It produces a result
+equivalent to (multi-)Paxos, and it is as efficient as Paxos, but its structure is
+different from Paxos; this makes Raft more understandable than Paxos and also provides
+a better foundation for building practical systems. In order to enhance understandability,
+Raft separates the key elements of consensus, such as leader election, log replication,
+and safety, and it enforces a stronger degree of coherency to reduce the number of
+states that must be considered. Results from a user study demonstrate that Raft is
+easier for students to learn than Paxos. Raft also includes a new mechanism for changing
+the cluster membership, which uses overlapping majorities to guarantee safety.},
+booktitle = {Proceedings of the 2014 USENIX Conference on USENIX Annual Technical Conference},
+pages = {305–320},
+numpages = {16},
+location = {Philadelphia, PA},
+series = {USENIX ATC'14}
+}
+
+@misc{ongaroBugSingleserverMembership2015,
+	title = {bug in single-server membership changes},
+	url = {https://groups.google.com/g/raft-dev/c/t4xj6dJTP6E/m/d2D9LrWRza8J},
+	urldate = {2021-09-01},
+	author = {Ongaro, Diego},
+	day = 10,
+	month = jul,
+	year = {2015},
+}
+
+@phdthesis{ongaroConsensusBridgingTheory2014,
+author = {Ongaro, Diego},
+advisor = {K., Ousterhout, John and David, Mazi\`{e}res, and Mendel, Rosenblum,},
+title = {Consensus: Bridging Theory and Practice},
+year = {2014},
+isbn = {9798662514218},
+publisher = {Stanford University},
+address = {Stanford, CA, USA},
+abstract = {Distributed consensus is fundamental to building fault-tolerant systems. It allows
+a collection of machines to work as a coherent group that can survive the failures
+of some of its members. Unfortunately, the most common consensus algorithm, , is widely
+regarded as difficult to understand and implement correctly. This dissertation presents
+a new consensus algorithm called Raft, which was designed for understandability. Raft
+first elects a server as leader, then concentrates all decision-making onto the leader.
+These two basic steps are relatively independent and form a better structure than
+Paxos, whose components are hard to separate. Raft elects a leader using voting and
+randomized timeouts. The election guarantees that the leader already stores all the
+information it needs, so data only flows outwards from the leader to other servers.
+Compared to other leader-based algorithms, this reduces mechanism and simplifies the
+behavior. Once a leader is elected, it manages a replicated log. Raft leverages a
+simple invariant on how logs grow to reduce the algorithm's state space and accomplish
+this task with minimal mechanism. Raft is also more suitable than previous algorithms
+for real-world implementations. It performs well enough for practical deployments,
+and it addresses all aspects of building a complete system, including how to manage
+client interactions, how to change the cluster membership, and how to compact the
+log when it grows too large. To change the cluster membership, Raft allows adding
+or removing one server at a time (complex changes can be composed from these basic
+steps), and the cluster continues servicing requests throughout the change. We believe
+that Raft is superior to Paxos and other consensus algorithms, both for educational
+purposes and as a foundation for implementation. Results from a user study demonstrate
+that Raft is easier for students to learn than Paxos. The algorithm has been formally
+specified and proven, its leader election algorithm works well in a variety of environments,
+and its performance is equivalent to Multi-Paxos. Many implementations of Raft are
+now available, and several companies are deploying Raft.},
+note = {AAI28121474}
+}
+
+@article{stoicaChordScalablePeertopeer2001,
+author = {Stoica, Ion and Morris, Robert and Liben-Nowell, David and Karger, David R. and Kaashoek, M. Frans and Dabek, Frank and Balakrishnan, Hari},
+title = {Chord: A Scalable Peer-to-Peer Lookup Protocol for Internet Applications},
+year = {2003},
+issue_date = {February 2003},
+publisher = {IEEE Press},
+volume = {11},
+number = {1},
+issn = {1063-6692},
+url = {https://doi.org/10.1109/TNET.2002.808407},
+doi = {10.1109/TNET.2002.808407},
+abstract = {A fundamental problem that confronts peer-to-peer applications is the efficient location
+of the node that stores a desired data item. This paper presents Chord, a distributed
+lookup protocol that addresses this problem. Chord provides support for just one operation:
+given a key, it maps the key onto a node. Data location can be easily implemented
+on top of Chord by associating a key with each data item, and storing the key/data
+pair at the node to which the key maps. Chord adapts efficiently as nodes join and
+leave the system, and can answer queries even if the system is continuously changing.
+Results from theoretical analysis and simulations show that Chord is scalable: Communication
+cost and the state maintained by each node scale logarithmically with the number of
+Chord nodes.},
+journal = {IEEE/ACM Trans. Netw.},
+month = feb,
+pages = {17–32},
+numpages = {16},
+keywords = {lookup protocols, peer-to-peer networks, distributed scalable algorithms}
+}
+
+@inproceedings{liben-nowellAnalysisEvolutionPeertopeer2002,
+author = {Liben-Nowell, David and Balakrishnan, Hari and Karger, David},
+title = {Analysis of the Evolution of Peer-to-Peer Systems},
+year = {2002},
+isbn = {1581134851},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/571825.571863},
+doi = {10.1145/571825.571863},
+abstract = {In this paper, we give a theoretical analysis of peer-to-peer (P2P) networks operating
+in the face of concurrent joins and unexpected departures. We focus on Chord, a recently
+developed P2P system that implements a distributed hash table abstraction, and study
+the process by which Chord maintains its distributed state as nodes join and leave
+the system. We argue that traditional performance measures based on run-time are uninformative
+for a continually running P2P network, and that the rate at which nodes in the network
+need to participate to maintain system state is a more useful metric. We give a general
+lower bound on this rate for a network to remain connected, and prove that an appropriately
+modified version of Chord's maintenance rate is within a logarithmic factor of the
+optimum rate.},
+booktitle = {Proceedings of the Twenty-First Annual Symposium on Principles of Distributed Computing},
+pages = {233–242},
+numpages = {10},
+location = {Monterey, California},
+series = {PODC '02}
+}
+
+@inproceedings{rowstronPastryScalableDecentralized2001,
+	address = {Berlin, Heidelberg},
+	series = {Lecture {Notes} in {Computer} {Science}},
+	title = {Pastry: {Scalable}, {Decentralized} {Object} {Location}, and {Routing} for {Large}-{Scale} {Peer}-to-{Peer} {Systems}},
+	isbn = {978-3-540-45518-9},
+	shorttitle = {Pastry},
+	doi = {10.1007/3-540-45518-3_18},
+	abstract = {This paper presents the design and evaluation of Pastry, a scalable, distributed object location and routing substrate for wide-area peer-to-peer applications. Pastry performs application-level routing and object location in a potentially very large overlay network of nodes connected via the Internet. It can be used to support a variety of peer-to-peer applications, including global data storage, data sharing, group communication and naming.Each node in the Pastry network has a unique identifier (nodeId). When presented with a message and a key, a Pastry node efficiently routes the message to the node with a nodeId that is numerically closest to the key, among all currently live Pastry nodes. Each Pastry node keeps track of its immediate neighbors in the nodeId space, and notifies applications of new node arrivals, node failures and recoveries. Pastry takes into account network locality; it seeks to minimize the distance messages travel, according to a to scalar proximity metric like the number of IP routing hopsPastry is completely decentralized, scalable, and self-organizing; it automatically adapts to the arrival, departure and failure of nodes. Experimental results obtained with a prototype implementation on an emulated network of up to 100,000 nodes confirm Pastry’s scalability and efficiency, its ability to self-organize and adapt to node failures, and its good network locality properties},
+	language = {en},
+	booktitle = {Middleware 2001},
+	publisher = {Springer},
+	author = {Rowstron, Antony and Druschel, Peter},
+	editor = {Guerraoui, Rachid},
+	year = {2001},
+	pages = {329--350},
+}
+
+@article{kotlaZyzzyvaSpeculativeByzantine2009,
+author = {Kotla, Ramakrishna and Alvisi, Lorenzo and Dahlin, Mike and Clement, Allen and Wong, Edmund},
+title = {Zyzzyva: Speculative Byzantine Fault Tolerance},
+year = {2010},
+issue_date = {December 2009},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {27},
+number = {4},
+issn = {0734-2071},
+url = {https://doi.org/10.1145/1658357.1658358},
+doi = {10.1145/1658357.1658358},
+abstract = {A longstanding vision in distributed systems is to build reliable systems from unreliable
+components. An enticing formulation of this vision is Byzantine Fault-Tolerant (BFT)
+state machine replication, in which a group of servers collectively act as a correct
+server even if some of the servers misbehave or malfunction in arbitrary (“Byzantine”)
+ways. Despite this promise, practitioners hesitate to deploy BFT systems, at least
+partly because of the perception that BFT must impose high overheads.In this article,
+we present Zyzzyva, a protocol that uses speculation to reduce the cost of BFT replication.
+In Zyzzyva, replicas reply to a client's request without first running an expensive
+three-phase commit protocol to agree on the order to process requests. Instead, they
+optimistically adopt the order proposed by a primary server, process the request,
+and reply immediately to the client. If the primary is faulty, replicas can become
+temporarily inconsistent with one another, but clients detect inconsistencies, help
+correct replicas converge on a single total ordering of requests, and only rely on
+responses that are consistent with this total order. This approach allows Zyzzyva
+to reduce replication overheads to near their theoretical minima and to achieve throughputs
+of tens of thousands of requests per second, making BFT replication practical for
+a broad range of demanding services.},
+journal = {ACM Trans. Comput. Syst.},
+month = jan,
+articleno = {7},
+numpages = {39},
+keywords = {output commit, speculative execution, replication, Byzantine fault tolerance}
+}
+
+@inproceedings{10.1145/1294261.1294267,
+author = {Kotla, Ramakrishna and Alvisi, Lorenzo and Dahlin, Mike and Clement, Allen and Wong, Edmund},
+title = {Zyzzyva: Speculative Byzantine Fault Tolerance},
+year = {2007},
+isbn = {9781595935915},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1294261.1294267},
+doi = {10.1145/1294261.1294267},
+abstract = {We present Zyzzyva, a protocol that uses speculation to reduce the cost and simplify
+the design of Byzantine fault tolerant state machine replication. In Zyzzyva, replicas
+respond to a client's request without first running an expensive three-phase commit
+protocol to reach agreement on the order in which the request must be processed. Instead,
+they optimistically adopt the order proposed by the primary and respond immediately
+to the client. Replicas can thus become temporarily inconsistent with one another,
+but clients detect inconsistencies, help correct replicas converge on a single total
+ordering of requests, and only rely on responses that are consistent with this total
+order. This approach allows Zyzzyva to reduce replication overheads to near their
+theoretical minimal.},
+booktitle = {Proceedings of Twenty-First ACM SIGOPS Symposium on Operating Systems Principles},
+pages = {45–58},
+numpages = {14},
+keywords = {output commit, byzantine fault tolerance, replication, speculative execution},
+location = {Stevenson, Washington, USA},
+series = {SOSP '07}
+}
+
+@article{kotlaZyzzyvaSpeculativeByzantine2007,
+author = {Kotla, Ramakrishna and Alvisi, Lorenzo and Dahlin, Mike and Clement, Allen and Wong, Edmund},
+title = {Zyzzyva: Speculative Byzantine Fault Tolerance},
+year = {2007},
+issue_date = {December 2007},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {41},
+number = {6},
+issn = {0163-5980},
+url = {https://doi.org/10.1145/1323293.1294267},
+doi = {10.1145/1323293.1294267},
+abstract = {We present Zyzzyva, a protocol that uses speculation to reduce the cost and simplify
+the design of Byzantine fault tolerant state machine replication. In Zyzzyva, replicas
+respond to a client's request without first running an expensive three-phase commit
+protocol to reach agreement on the order in which the request must be processed. Instead,
+they optimistically adopt the order proposed by the primary and respond immediately
+to the client. Replicas can thus become temporarily inconsistent with one another,
+but clients detect inconsistencies, help correct replicas converge on a single total
+ordering of requests, and only rely on responses that are consistent with this total
+order. This approach allows Zyzzyva to reduce replication overheads to near their
+theoretical minimal.},
+journal = {SIGOPS Oper. Syst. Rev.},
+month = oct,
+pages = {45–58},
+numpages = {14},
+keywords = {byzantine fault tolerance, replication, output commit, speculative execution}
+}
+
+@article{martinFastByzantineConsensus2006,
+	title = {Fast {Byzantine} {Consensus}},
+	volume = {3},
+	copyright = {Copyright IEEE Computer Society Jul-Sep 2006},
+	issn = {15455971},
+	url = {http://www.proquest.com/docview/206534931/abstract/A91EECC1018D4A46PQ/1},
+	doi = {http://dx.doi.org.libproxy1.nus.edu.sg/10.1109/TDSC.2006.35},
+	abstract = {We present the first protocol that reaches asynchronous Byzantine consensus in two communication steps in the common case. We prove that our protocol is optimal in terms of both number of communication steps and number of processes for two--step consensus. The protocol can be used to build a replicated state machine that requires only three communication steps per request in the common case. Further, we show a parameterized version of the protocol that is safe despite f Byzantine failures and, in the common case, guarantees two-step execution despite some number t of failures (t{\textbackslash}le f). We show that this parameterized two-step consensus protocol is also optimal in terms of both number of communication steps and number of processes. [PUBLICATION ABSTRACT]},
+	language = {English},
+	number = {3},
+	journal = {IEEE Transactions on Dependable and Secure Computing},
+	author = {Martin, Jean-Philippe and Alvisi, Lorenzo},
+	month = sep,
+	year = {2006},
+	note = {Num Pages: 202-215
+Place: Washington, United States
+Publisher: IEEE Computer Society},
+	keywords = {Communication, Computer programming, Computers--Computer Security, Protocol, Studies},
+	pages = {202--215},
+}
+
+@inproceedings{martinFastByzantineConsensus2005,
+	title = {Fast {Byzantine} {Consensus}},
+	doi = {10.1109/DSN.2005.48},
+	abstract = {We present the first consensus protocol that reaches asynchronous Byzantine consensus in two communication steps in the common case. We prove that our protocol is optimal in terms of both number of communication step, and number of processes for 2-step consensus. The protocol can be used to build a replicated state machine that requires only three communication steps per request in the common case.},
+	booktitle = {2005 {International} {Conference} on {Dependable} {Systems} and {Networks} ({DSN}'05)},
+	author = {Martin, J.-P. and Alvisi, L.},
+	month = jun,
+	year = {2005},
+	note = {ISSN: 2158-3927},
+	keywords = {Computer crashes, Delay, Fault tolerance, Fault tolerant systems, Paper technology, Pathology, Protection, Protocols, Safety, Software performance},
+	pages = {402--411},
+}
+
+@inproceedings{moraruThereMoreConsensus2013,
+	address = {New York, NY, USA},
+	series = {{SOSP} '13},
+	title = {There is more consensus in {Egalitarian} parliaments},
+	isbn = {978-1-4503-2388-8},
+	url = {http://doi.org/10.1145/2517349.2517350},
+	doi = {10.1145/2517349.2517350},
+	abstract = {This paper describes the design and implementation of Egalitarian Paxos (EPaxos), a new distributed consensus algorithm based on Paxos. EPaxos achieves three goals: (1) optimal commit latency in the wide-area when tolerating one and two failures, under realistic conditions; (2) uniform load balancing across all replicas (thus achieving high throughput); and (3) graceful performance degradation when replicas are slow or crash. Egalitarian Paxos is to our knowledge the first protocol to achieve the previously stated goals efficiently---that is, requiring only a simple majority of replicas to be non-faulty, using a number of messages linear in the number of replicas to choose a command, and committing commands after just one communication round (one round trip) in the common case or after at most two rounds in any case. We prove Egalitarian Paxos's properties theoretically and demonstrate its advantages empirically through an implementation running on Amazon EC2.},
+	booktitle = {Proceedings of the {Twenty}-{Fourth} {ACM} {Symposium} on {Operating} {Systems} {Principles}},
+	publisher = {Association for Computing Machinery},
+	author = {Moraru, Iulian and Andersen, David G. and Kaminsky, Michael},
+	month = nov,
+	year = {2013},
+	pages = {358--372},
+}
+
+@inproceedings{nawabDPaxosManagingData2018,
+	address = {New York, NY, USA},
+	series = {{SIGMOD} '18},
+	title = {{DPaxos}: {Managing} {Data} {Closer} to {Users} for {Low}-{Latency} and {Mobile} {Applications}},
+	isbn = {978-1-4503-4703-7},
+	shorttitle = {{DPaxos}},
+	url = {https://doi.org/10.1145/3183713.3196928},
+	doi = {10.1145/3183713.3196928},
+	abstract = {In this paper, we propose Dynamic Paxos (DPaxos), a Paxos-based consensus protocol to manage access to partitioned data across globally-distributed datacenters and edge nodes. DPaxos is intended to implement a State Machine Replication component in data management systems for the edge. DPaxos targets the unique opportunities of utilizing edge computing resources to support emerging applications with stringent mobility and real-time requirements such as Augmented and Virtual Reality and vehicular applications. The main objective of DPaxos is to reduce the latency of serving user requests, recovering from failures, and reacting to mobility. DPaxos achieves these objectives by a few proposed changes to the traditional Paxos protocol. Most notably, DPaxos proposes a dynamic allocation of quorums ( i.e. , groups of nodes) that are needed for Paxos Leader Election. Leader Election quorums in DPaxos are smaller than traditional Paxos and expand only in the presence of conflicts.},
+	urldate = {2021-09-07},
+	booktitle = {Proceedings of the 2018 {International} {Conference} on {Management} of {Data}},
+	publisher = {Association for Computing Machinery},
+	author = {Nawab, Faisal and Agrawal, Divyakant and El Abbadi, Amr},
+	month = may,
+	year = {2018},
+	keywords = {edge computing, geo-replication, multi-datacenter, paxos, transaction processing},
+	pages = {1221--1236},
+}
+
+@techreport{amos15812TermPaper2015,
+	title = {15-812 {Term} {Paper}: {Specifying} and proving cluster membership for the {Raft} distributed consensus algorithm},
+	url = {https://www.cs.cmu.edu/~aplatzer/course/pls15/projects/bamos.pdf},
+	author = {Amos, Brandon and Zhang, Huanchen},
+	year = {2015},
+	pages = {46},
+}
+
+@misc{howardRaftDoesNot2020,
+	title = {Raft does not {Guarantee} {Liveness} in the face of {Network} {Faults}},
+	url = {https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/},
+	abstract = {Last month, Cloudflare published a postmortem of a recent 6-hour outage caused by a partial switch failure which left etcd unavailable as it was unable to establish a stable leader. This outage has understandably led to discussion online about exactly what liveness guarantees are provided by the Raft consensus algorithm...},
+	urldate = {2021-05-07},
+	author = {Howard, Heidi and Abraham, Ittai},
+	month = dec,
+	year = {2020},
+}
+
+@article{zaveUsingLightweightModeling2012,
+	title = {Using lightweight modeling to understand chord},
+	volume = {42},
+	issn = {0146-4833},
+	url = {https://dl.acm.org/doi/10.1145/2185376.2185383},
+	doi = {10.1145/2185376.2185383},
+	abstract = {Correctness of the Chord ring-maintenance protocol would mean that the protocol can eventually repair all disruptions in the ring structure, given ample time and no further disruptions while it is working. In other words, it is “eventual reachability.” Under the same assumptions about failure behavior as made in the Chord papers, no published version of Chord is correct. This result is based on modeling the protocol in Alloy and analyzing it with the Alloy Analyzer. By combining the right selection of pseudocode and textual hints from several papers, and ﬁxing ﬂaws revealed by analysis, it is possible to get a version that may be correct. The paper also discusses the signiﬁcance of these results, describes brieﬂy how Alloy is used to model and reason about Chord, and compares Alloy analysis to model-checking.},
+	language = {en},
+	number = {2},
+	urldate = {2021-09-06},
+	journal = {ACM SIGCOMM Computer Communication Review},
+	author = {Zave, Pamela},
+	month = mar,
+	year = {2012},
+	pages = {49--57},
+}
+
+@article{zaveReasoningIdentifierSpaces2017,
+	title = {Reasoning {About} {Identifier} {Spaces}: {How} to {Make} {Chord} {Correct}},
+	volume = {43},
+	issn = {1939-3520},
+	shorttitle = {Reasoning {About} {Identifier} {Spaces}},
+	doi = {10.1109/TSE.2017.2655056},
+	abstract = {The Chord distributed hash table (DHT) is well-known and often used to implement peer-to-peer systems. Chord peers find other peers, and access their data, through a ring-shaped pointer structure in a large identifier space. Despite claims of proven correctness, i.e., eventual reachability, previous work has shown that the Chord ring-maintenance protocol is not correct under its original operating assumptions. Previous work has not, however, discovered whether Chord could be made correct under the same assumptions. The contribution of this paper is to provide the first specification of correct operations and initialization for Chord, an inductive invariant that is necessary and sufficient to support a proof of correctness, and two independent proofs of correctness. One proof is informal and intuitive, and applies to networks of any size. The other proof is based on a formal model in Alloy, and uses fully automated analysis to prove the assertions for networks of bounded size. The two proofs complement each other in several important ways.},
+	number = {12},
+	journal = {IEEE Transactions on Software Engineering},
+	author = {Zave, Pamela},
+	month = dec,
+	year = {2017},
+	note = {Conference Name: IEEE Transactions on Software Engineering},
+	keywords = {Analytical models, Computers and information processing, distributed computing, Distributed processing, formal verification, Formal verification, Information processing, peer-to-peer computing, Peer-to-peer computing, software engineering, Structural rings},
+	pages = {1144--1156},
+}
+
+@incollection{azmyRigorousCorrectnessProof2016,
+	address = {Cham},
+	title = {A {Rigorous} {Correctness} {Proof} for {Pastry}},
+	volume = {9675},
+	isbn = {978-3-319-33599-5 978-3-319-33600-8},
+	url = {http://link.springer.com/10.1007/978-3-319-33600-8_5},
+	abstract = {Peer-to-peer protocols for maintaining distributed hash tables, such as Pastry or Chord, have become popular for a class of Internet applications. While such protocols promise certain properties concerning correctness and performance, veriﬁcation attempts using formal methods invariably discover border cases that violate some of those guarantees. Tianxiang Lu reported correctness problems in published versions of Pastry and also developed a model, which he called LuPastry, for which he provided a partial proof of correct delivery assuming no node departures, mechanized in the TLA+ Proof System. Lu’s proof is based on certain assumptions that were left unproven. We found counter-examples to several of these assumptions. In this paper, we present a revised model and rigorous proof of correct delivery, which we call LuPastry+. Aside from being the ﬁrst complete proof, LuPastry+ also improves upon Lu’s work by reformulating parts of the speciﬁcation in such a way that the reasoning complexity is conﬁned to a small part of the proof.},
+	language = {en},
+	urldate = {2021-09-07},
+	booktitle = {Abstract {State} {Machines}, {Alloy}, {B}, {TLA}, {VDM}, and {Z}},
+	publisher = {Springer International Publishing},
+	author = {Azmy, Noran and Merz, Stephan and Weidenbach, Christoph},
+	editor = {Butler, Michael and Schewe, Klaus-Dieter and Mashkoor, Atif and Biro, Miklos},
+	year = {2016},
+	doi = {10.1007/978-3-319-33600-8_5},
+	note = {Series Title: Lecture Notes in Computer Science},
+	pages = {86--101},
+}
+
+@article{azmyMachinecheckedCorrectnessProof2018,
+	title = {A machine-checked correctness proof for {Pastry}},
+	volume = {158},
+	issn = {01676423},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S0167642317301612},
+	doi = {10.1016/j.scico.2017.08.003},
+	abstract = {Protocols implemented on overlay networks in a peer-to-peer (P2P) setting promise ﬂexibility, performance, and scalability due to the possibility for nodes to join and leave the network while the protocol is running. These protocols must ensure that all nodes maintain a consistent view of the network, in the absence of centralized control, so that requests can be routed to the intended destination. This aspect represents an interesting target for formal veriﬁcation. In previous work, Lu studied the Pastry algorithm for implementing a distributed hash table (DHT) over a P2P network and identiﬁed problems in published versions of the algorithm. He suggested a variant of the algorithm, together with a machine-checked proof in the TLA+ Proof System (tlaps), assuming the absence of node failures. We identify and correct problems in Lu’s proof that are due to unchecked assumptions concerning modulus arithmetic and underlying data structures. We introduce higher-level abstractions into the speciﬁcations and proofs that are intended for improving the degree of automation achieved by the proof backends. These abstractions are instrumental for presenting the ﬁrst complete formal proof. Finally, we formally prove that an even simpler version of Lu’s algorithm, in which the ﬁnal phase of the join protocol is omitted, is still correct, again assuming that nodes do not fail.},
+	language = {en},
+	urldate = {2021-09-07},
+	journal = {Science of Computer Programming},
+	author = {Azmy, Noran and Merz, Stephan and Weidenbach, Christoph},
+	month = jun,
+	year = {2018},
+	pages = {64--80},
+}
+
+@article{abrahamRevisitingFastPractical2017,
+	title = {Revisiting {Fast} {Practical} {Byzantine} {Fault} {Tolerance}},
+	url = {http://arxiv.org/abs/1712.01367},
+	abstract = {In this note, we observe a safety violation in Zyzzyva and a liveness violation in FaB. To demonstrate these issues, we require relatively simple scenarios, involving only four replicas, and one or two view changes. In all of them, the problem is manifested already in the first log slot.},
+	urldate = {2021-09-06},
+	journal = {arXiv:1712.01367 [cs]},
+	author = {Abraham, Ittai and Gueta, Guy and Malkhi, Dahlia and Alvisi, Lorenzo and Kotla, Rama and Martin, Jean-Philippe},
+	month = dec,
+	year = {2017},
+	note = {arXiv: 1712.01367},
+	keywords = {Computer Science - Distributed, Parallel, and Cluster Computing},
+}
+
+
+@article{sutraCorrectnessEgalitarianPaxos2020,
+	title = {On the correctness of {Egalitarian} {Paxos}},
+	volume = {156},
+	issn = {0020-0190},
+	url = {https://www.sciencedirect.com/science/article/pii/S002001901930184X},
+	doi = {10.1016/j.ipl.2019.105901},
+	abstract = {This paper identifies a problem in both the TLA+ specification and the implementation of the Egalitarian Paxos protocol. It is related to how replicas switch from one ballot to another when computing the dependencies of a command. The problem may lead replicas to diverge and break the linearizability of the replicated service.},
+	language = {en},
+	urldate = {2021-04-01},
+	journal = {Information Processing Letters},
+	author = {Sutra, Pierre},
+	month = apr,
+	year = {2020},
+	keywords = {Fault tolerance, Consensus, Distributed systems, State-machine replication},
+}
+
+@article{whittakerMatchmakerPaxosReconfigurable2021,
+	title = {Matchmaker {Paxos}: {A} {Reconfigurable} {Consensus} {Protocol}},
+	abstract = {State machine replication protocols, like MultiPaxos and Raft, are at the heart of numerous distributed systems. To tolerate machine failures, these protocols must replace failed machines with new machines, a process known as reconﬁguration. Reconﬁguration has become increasingly important over time as the need for frequent reconﬁguration has grown. Despite this, reconﬁguration has largely been neglected in the literature. In this paper, we present Matchmaker Paxos and Matchmaker MultiPaxos, a reconﬁgurable consensus and state machine replication protocol respectively. Our protocols can perform a reconﬁguration with little to no impact on the latency or throughput of command processing; they can perform a reconﬁguration in a few milliseconds; and they present a framework that can be generalized to other replication protocols in a way that previous reconﬁguration techniques can not. We provide proofs of correctness for the protocols and optimizations, and present empirical results from an open source implementation showing that throughput and latency do not change signiﬁcantly during a reconﬁguration.},
+	language = {en},
+	journal = {Journal of Systems Research},
+	author = {Whittaker, Michael and Hellerstein, Joseph M and Giridharan, Neil and Szekeres, Adriana and Howard, Heidi and Nawab, Faisal},
+	year = {2021},
+	pages = {22},
+}

@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+\usepackage[backend=biber, style=alphabetic, sorting=nyt, urldate=iso]{biblatex}
+\addbibresource{bibliography.bib}
+
+
+\title{Errors found in distributed protocols}
+\date{}
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\begin{tabular}{ c c c c }
+    \toprule
+    Protocol & Reference & Violation & Counter-example \\
+    \midrule
+
+    Raft & \cite{ongaroConsensusBridgingTheory2014} & safety\footnote{The
+    single-server membership change algorithm is described in Ongaro's PhD
+    thesis. The paper version of Raft uses joint consensus and does not have
+    this error.} & \cite{amos15812TermPaper2015,
+    ongaroBugSingleserverMembership2015} \\
+
+    Raft & \cite{ongaroSearchUnderstandableConsensus2014,
+    ongaroConsensusBridgingTheory2014} & liveness &
+    \cite{howardRaftDoesNot2020} \\
+
+    Chord & \cite{stoicaChordScalablePeertopeer2001,
+    liben-nowellAnalysisEvolutionPeertopeer2002} &
+    liveness\footnote{Eventual reachability is Chord's key
+    correctness property.} & \cite{zaveUsingLightweightModeling2012,
+    zaveReasoningIdentifierSpaces2017} \\
+
+    Pastry & \cite{rowstronPastryScalableDecentralized2001} & safety &
+    \cite{azmyRigorousCorrectnessProof2016, azmyMachinecheckedCorrectnessProof2018}\\
+
+    Zyzzyva & \cite{kotlaZyzzyvaSpeculativeByzantine2007,
+    kotlaZyzzyvaSpeculativeByzantine2009} & safety &
+    \cite{abrahamRevisitingFastPractical2017} \\
+
+    FaB Paxos & \cite{martinFastByzantineConsensus2005,
+    martinFastByzantineConsensus2006} & liveness &
+    \cite{abrahamRevisitingFastPractical2017} \\
+
+    EPaxos & \cite{moraruThereMoreConsensus2013} & safety &
+    \cite{sutraCorrectnessEgalitarianPaxos2020} \\
+
+    DPaxos & \cite{nawabDPaxosManagingData2018} & safety &
+    \cite{whittakerMatchmakerPaxosReconfigurable2021} \\
+
+    \bottomrule
+\end{tabular}
+\end{center}
+
+\vspace*{\fill}
+\begin{center}
+(Reference list starts on the next page.)
+\end{center}
+\vspace*{\fill}
+
+\newpage
+\printbibliography
+
+\end{document}

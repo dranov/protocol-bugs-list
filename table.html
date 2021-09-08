@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Errors found in distributed protocols</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Errors found in distributed protocols</h1>
+</header>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Protocol</th>
+<th style="text-align: center;">Reference</th>
+<th style="text-align: center;">Violation</th>
+<th style="text-align: center;">Counter-example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Raft</td>
+<td style="text-align: center;"><span class="citation" data-cites="ongaroConsensusBridgingTheory2014">[Ongaro 2014]</span></td>
+<td style="text-align: center;">safety<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="amos15812TermPaper2015 ongaroBugSingleserverMembership2015">[Amos and Zhang 2015; Ongaro 2015]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Raft</td>
+<td style="text-align: center;"><span class="citation" data-cites="ongaroSearchUnderstandableConsensus2014 ongaroConsensusBridgingTheory2014">[Ongaro and Ousterhout 2014; Ongaro 2014]</span></td>
+<td style="text-align: center;">liveness</td>
+<td style="text-align: center;"><span class="citation" data-cites="howardRaftDoesNot2020">[Howard and Abraham 2020]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Chord</td>
+<td style="text-align: center;"><span class="citation" data-cites="stoicaChordScalablePeertopeer2001 liben-nowellAnalysisEvolutionPeertopeer2002">[Stoica et al. 2003; Liben-Nowell et al. 2002]</span></td>
+<td style="text-align: center;">liveness<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="zaveUsingLightweightModeling2012 zaveReasoningIdentifierSpaces2017">[Zave 2012; Zave 2017]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Pastry</td>
+<td style="text-align: center;"><span class="citation" data-cites="rowstronPastryScalableDecentralized2001">[Rowstron and Druschel 2001]</span></td>
+<td style="text-align: center;">safety</td>
+<td style="text-align: center;"><span class="citation" data-cites="azmyRigorousCorrectnessProof2016 azmyMachinecheckedCorrectnessProof2018">[Azmy et al. 2016; Azmy et al. 2018]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Zyzzyva</td>
+<td style="text-align: center;"><span class="citation" data-cites="kotlaZyzzyvaSpeculativeByzantine2007 kotlaZyzzyvaSpeculativeByzantine2009">[Kotla et al. 2007; Kotla et al. 2010]</span></td>
+<td style="text-align: center;">safety</td>
+<td style="text-align: center;"><span class="citation" data-cites="abrahamRevisitingFastPractical2017">[Abraham et al. 2017]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">FaB Paxos</td>
+<td style="text-align: center;"><span class="citation" data-cites="martinFastByzantineConsensus2005 martinFastByzantineConsensus2006">[Martin and Alvisi 2005; Martin and Alvisi 2006]</span></td>
+<td style="text-align: center;">liveness</td>
+<td style="text-align: center;"><span class="citation" data-cites="abrahamRevisitingFastPractical2017">[Abraham et al. 2017]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">EPaxos</td>
+<td style="text-align: center;"><span class="citation" data-cites="moraruThereMoreConsensus2013">[Moraru et al. 2013]</span></td>
+<td style="text-align: center;">safety</td>
+<td style="text-align: center;"><span class="citation" data-cites="sutraCorrectnessEgalitarianPaxos2020">[Sutra 2020]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DPaxos</td>
+<td style="text-align: center;"><span class="citation" data-cites="nawabDPaxosManagingData2018">[Nawab et al. 2018]</span></td>
+<td style="text-align: center;">safety</td>
+<td style="text-align: center;"><span class="citation" data-cites="whittakerMatchmakerPaxosReconfigurable2021">[Whittaker et al. 2021]</span></td>
+</tr>
+</tbody>
+</table>
+<p>(Reference list starts on the next page.)</p>
+<div id="refs" class="references">
+<div id="ref-abrahamRevisitingFastPractical2017">
+<p><span class="smallcaps">Abraham, I., Gueta, G., Malkhi, D., Alvisi, L., Kotla, R., and Martin, J.-P.</span> 2017. Revisiting Fast Practical Byzantine Fault Tolerance. <em>arXiv:1712.01367 [cs]</em>.</p>
+</div>
+<div id="ref-amos15812TermPaper2015">
+<p><span class="smallcaps">Amos, B. and Zhang, H.</span> 2015. <em>15-812 Term Paper: Specifying and proving cluster membership for the Raft distributed consensus algorithm</em>..</p>
+</div>
+<div id="ref-azmyRigorousCorrectnessProof2016">
+<p><span class="smallcaps">Azmy, N., Merz, S., and Weidenbach, C.</span> 2016. A Rigorous Correctness Proof for Pastry. In: M. Butler, K.-D. Schewe, A. Mashkoor and M. Biro, eds., <em>Abstract State Machines, Alloy, B, TLA, VDM, and Z</em>. Springer International Publishing, Cham, 86–101.</p>
+</div>
+<div id="ref-azmyMachinecheckedCorrectnessProof2018">
+<p><span class="smallcaps">Azmy, N., Merz, S., and Weidenbach, C.</span> 2018. A machine-checked correctness proof for Pastry. <em>Science of Computer Programming</em> <em>158</em>, 64–80.</p>
+</div>
+<div id="ref-howardRaftDoesNot2020">
+<p><span class="smallcaps">Howard, H. and Abraham, I.</span> 2020. Raft does not Guarantee Liveness in the face of Network Faults. <a href="https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/">https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/</a>.</p>
+</div>
+<div id="ref-kotlaZyzzyvaSpeculativeByzantine2007">
+<p><span class="smallcaps">Kotla, R., Alvisi, L., Dahlin, M., Clement, A., and Wong, E.</span> 2007. Zyzzyva: Speculative byzantine fault tolerance. <em>SIGOPS Oper. Syst. Rev.</em> <em>41</em>, 6, 45–58.</p>
+</div>
+<div id="ref-kotlaZyzzyvaSpeculativeByzantine2009">
+<p><span class="smallcaps">Kotla, R., Alvisi, L., Dahlin, M., Clement, A., and Wong, E.</span> 2010. Zyzzyva: Speculative byzantine fault tolerance. <em>ACM Trans. Comput. Syst.</em> <em>27</em>, 4.</p>
+</div>
+<div id="ref-liben-nowellAnalysisEvolutionPeertopeer2002">
+<p><span class="smallcaps">Liben-Nowell, D., Balakrishnan, H., and Karger, D.</span> 2002. Analysis of the evolution of peer-to-peer systems. <em>Proceedings of the twenty-first annual symposium on principles of distributed computing</em>, Association for Computing Machinery, 233–242.</p>
+</div>
+<div id="ref-martinFastByzantineConsensus2005">
+<p><span class="smallcaps">Martin, J.-P. and Alvisi, L.</span> 2005. Fast Byzantine Consensus. <em>2005 International Conference on Dependable Systems and Networks (DSN’05)</em>, 402–411.</p>
+</div>
+<div id="ref-martinFastByzantineConsensus2006">
+<p><span class="smallcaps">Martin, J.-P. and Alvisi, L.</span> 2006. Fast Byzantine Consensus. <em>IEEE Transactions on Dependable and Secure Computing</em> <em>3</em>, 3, 202–215.</p>
+</div>
+<div id="ref-moraruThereMoreConsensus2013">
+<p><span class="smallcaps">Moraru, I., Andersen, D.G., and Kaminsky, M.</span> 2013. There is more consensus in Egalitarian parliaments. <em>Proceedings of the Twenty-Fourth ACM Symposium on Operating Systems Principles</em>, Association for Computing Machinery, 358–372.</p>
+</div>
+<div id="ref-nawabDPaxosManagingData2018">
+<p><span class="smallcaps">Nawab, F., Agrawal, D., and El Abbadi, A.</span> 2018. DPaxos: Managing Data Closer to Users for Low-Latency and Mobile Applications. <em>Proceedings of the 2018 International Conference on Management of Data</em>, Association for Computing Machinery, 1221–1236.</p>
+</div>
+<div id="ref-ongaroConsensusBridgingTheory2014">
+<p><span class="smallcaps">Ongaro, D.</span> 2014. Consensus: Bridging theory and practice..</p>
+</div>
+<div id="ref-ongaroBugSingleserverMembership2015">
+<p><span class="smallcaps">Ongaro, D.</span> 2015. Bug in single-server membership changes. <a href="https://groups.google.com/g/raft-dev/c/t4xj6dJTP6E/m/d2D9LrWRza8J">https://groups.google.com/g/raft-dev/c/t4xj6dJTP6E/m/d2D9LrWRza8J</a>.</p>
+</div>
+<div id="ref-ongaroSearchUnderstandableConsensus2014">
+<p><span class="smallcaps">Ongaro, D. and Ousterhout, J.</span> 2014. In search of an understandable consensus algorithm. <em>Proceedings of the 2014 usenix conference on usenix annual technical conference</em>, USENIX Association, 305–320.</p>
+</div>
+<div id="ref-rowstronPastryScalableDecentralized2001">
+<p><span class="smallcaps">Rowstron, A. and Druschel, P.</span> 2001. Pastry: Scalable, Decentralized Object Location, and Routing for Large-Scale Peer-to-Peer Systems. <em>Middleware 2001</em>, Springer, 329–350.</p>
+</div>
+<div id="ref-stoicaChordScalablePeertopeer2001">
+<p><span class="smallcaps">Stoica, I., Morris, R., Liben-Nowell, D., et al.</span> 2003. Chord: A scalable peer-to-peer lookup protocol for internet applications. <em>IEEE/ACM Trans. Netw.</em> <em>11</em>, 1, 17–32.</p>
+</div>
+<div id="ref-sutraCorrectnessEgalitarianPaxos2020">
+<p><span class="smallcaps">Sutra, P.</span> 2020. On the correctness of Egalitarian Paxos. <em>Information Processing Letters</em> <em>156</em>.</p>
+</div>
+<div id="ref-whittakerMatchmakerPaxosReconfigurable2021">
+<p><span class="smallcaps">Whittaker, M., Hellerstein, J.M., Giridharan, N., Szekeres, A., Howard, H., and Nawab, F.</span> 2021. Matchmaker Paxos: A Reconfigurable Consensus Protocol. <em>Journal of Systems Research</em>, 22.</p>
+</div>
+<div id="ref-zaveUsingLightweightModeling2012">
+<p><span class="smallcaps">Zave, P.</span> 2012. Using lightweight modeling to understand chord. <em>ACM SIGCOMM Computer Communication Review</em> <em>42</em>, 2, 49–57.</p>
+</div>
+<div id="ref-zaveReasoningIdentifierSpaces2017">
+<p><span class="smallcaps">Zave, P.</span> 2017. Reasoning About Identifier Spaces: How to Make Chord Correct. <em>IEEE Transactions on Software Engineering</em> <em>43</em>, 12, 1144–1156.</p>
+</div>
+</div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>The single-server membership change algorithm is described in Ongaro’s PhD thesis. The paper version of Raft uses joint consensus and does not have this error.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Eventual reachability is Chord’s key correctness property.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+</body>
+</html>
