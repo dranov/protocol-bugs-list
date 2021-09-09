@@ -47,7 +47,7 @@ The following people suggested additions to the list:
 
 - [Dan Ports](https://drkp.net/)
 - [Michael Whittaker](https://mwhittaker.github.io/)
-- [Heidi Howard][https://www.heidihoward.co.uk/]
+- [Heidi Howard](https://www.heidihoward.co.uk/)
 
 ## References
 
