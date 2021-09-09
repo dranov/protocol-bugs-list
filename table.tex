@@ -19,16 +19,6 @@
     Protocol & Reference & Violation & Counter-example \\
     \midrule
 
-    Raft & \cite{ongaroConsensusBridgingTheory2014} & safety\footnote{The
-    single-server membership change algorithm is described in Ongaro's PhD
-    thesis. The paper version of Raft uses joint consensus and does not have
-    this error.} & \cite{amos15812TermPaper2015,
-    ongaroBugSingleserverMembership2015} \\
-
-    Raft & \cite{ongaroSearchUnderstandableConsensus2014,
-    ongaroConsensusBridgingTheory2014} & liveness &
-    \cite{howardRaftDoesNot2020} \\
-
     Chord & \cite{stoicaChordScalablePeertopeer2001,
     liben-nowellAnalysisEvolutionPeertopeer2002} &
     liveness\footnote{Eventual reachability is Chord's key
@@ -38,29 +28,51 @@
     Pastry & \cite{rowstronPastryScalableDecentralized2001} & safety &
     \cite{azmyRigorousCorrectnessProof2016, azmyMachinecheckedCorrectnessProof2018}\\
 
-    Zyzzyva & \cite{kotlaZyzzyvaSpeculativeByzantine2007,
-    kotlaZyzzyvaSpeculativeByzantine2009} & safety &
-    \cite{abrahamRevisitingFastPractical2017} \\
+    Generalised Paxos & \cite{lamportGeneralizedConsensusPaxos2005} &
+    non-triviality\footnote{Acceptors might accept commands that have not been
+    proposed.} & \cite{sutraFastGenuineGeneralized2010} \\
 
     FaB Paxos & \cite{martinFastByzantineConsensus2005,
     martinFastByzantineConsensus2006} & liveness &
     \cite{abrahamRevisitingFastPractical2017} \\
 
-    EPaxos & \cite{moraruThereMoreConsensus2013} & safety &
-    \cite{sutraCorrectnessEgalitarianPaxos2020} \\
-
-    DPaxos & \cite{nawabDPaxosManagingData2018} & safety &
-    \cite{whittakerMatchmakerPaxosReconfigurable2021} \\
-
-    JPaxos & \cite{konczakJPaxosStateMachine2011} & safety &
-    \cite{michaelRecoveringSharedObjects2017} \\
-
     Multi-Paxos\footnote{As described in Paxos Made Live.} &
     \cite{chandraPaxosMadeLive2007} & safety &
     \cite{michaelRecoveringSharedObjects2017} \\
 
+    Zyzzyva & \cite{kotlaZyzzyvaSpeculativeByzantine2007,
+    kotlaZyzzyvaSpeculativeByzantine2009} & safety &
+    \cite{abrahamRevisitingFastPractical2017} \\
+
+    CRAQ & \cite{terraceObjectStorageCRAQ2009} & safety\footnote{Client reads
+    might fail due to incorrect garbage collection.} &
+    \cite{whittakerCRAQBug2020} \\
+
+    JPaxos & \cite{konczakJPaxosStateMachine2011} & safety &
+    \cite{michaelRecoveringSharedObjects2017} \\
+
     VR Revisited & \cite{liskovViewstampedReplicationRevisited2012} & safety &
     \cite{michaelRecoveringSharedObjects2017} \\
+
+    EPaxos & \cite{moraruThereMoreConsensus2013} & safety &
+    \cite{sutraCorrectnessEgalitarianPaxos2020} \\
+
+    Raft & \cite{ongaroSearchUnderstandableConsensus2014} &
+    liveness\footnote{The joint consensus membership change algorithm described
+    in the paper version of Raft had a liveness bug, which was fixed in
+    Ongaro's PhD thesis.} & \cite{hochConfigurationChanges2014} \\
+
+    Raft & \cite{ongaroConsensusBridgingTheory2014} & safety\footnote{The bug
+    is in the single-server membership change scheme described in Ongaro's
+    thesis.} & \cite{amos15812TermPaper2015,
+    ongaroBugSingleserverMembership2015} \\
+
+    Raft & \cite{ongaroSearchUnderstandableConsensus2014,
+    ongaroConsensusBridgingTheory2014} & liveness &
+    \cite{howardRaftDoesNot2020} \\
+
+    DPaxos & \cite{nawabDPaxosManagingData2018} & safety &
+    \cite{whittakerMatchmakerPaxosReconfigurable2021} \\
 
     \bottomrule
 \end{tabular}

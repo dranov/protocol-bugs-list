@@ -27,21 +27,9 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">Raft</td>
-<td style="text-align: center;"><span class="citation" data-cites="ongaroConsensusBridgingTheory2014">[Ongaro 2014]</span></td>
-<td style="text-align: center;">safety<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></td>
-<td style="text-align: center;"><span class="citation" data-cites="amos15812TermPaper2015 ongaroBugSingleserverMembership2015">[Amos and Zhang 2015; Ongaro 2015]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Raft</td>
-<td style="text-align: center;"><span class="citation" data-cites="ongaroSearchUnderstandableConsensus2014 ongaroConsensusBridgingTheory2014">[Ongaro and Ousterhout 2014; Ongaro 2014]</span></td>
-<td style="text-align: center;">liveness</td>
-<td style="text-align: center;"><span class="citation" data-cites="howardRaftDoesNot2020">[Howard and Abraham 2020]</span></td>
-</tr>
-<tr class="odd">
 <td style="text-align: center;">Chord</td>
-<td style="text-align: center;"><span class="citation" data-cites="stoicaChordScalablePeertopeer2001 liben-nowellAnalysisEvolutionPeertopeer2002">[Stoica et al. 2003; Liben-Nowell et al. 2002]</span></td>
-<td style="text-align: center;">liveness<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="stoicaChordScalablePeertopeer2001 liben-nowellAnalysisEvolutionPeertopeer2002">[Stoica et al. 2001; Liben-Nowell et al. 2002]</span></td>
+<td style="text-align: center;">liveness<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></td>
 <td style="text-align: center;"><span class="citation" data-cites="zaveUsingLightweightModeling2012 zaveReasoningIdentifierSpaces2017">[Zave 2012; Zave 2017]</span></td>
 </tr>
 <tr class="even">
@@ -51,10 +39,10 @@
 <td style="text-align: center;"><span class="citation" data-cites="azmyRigorousCorrectnessProof2016 azmyMachinecheckedCorrectnessProof2018">[Azmy et al. 2016; Azmy et al. 2018]</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">Zyzzyva</td>
-<td style="text-align: center;"><span class="citation" data-cites="kotlaZyzzyvaSpeculativeByzantine2007 kotlaZyzzyvaSpeculativeByzantine2009">[Kotla et al. 2007; Kotla et al. 2010]</span></td>
-<td style="text-align: center;">safety</td>
-<td style="text-align: center;"><span class="citation" data-cites="abrahamRevisitingFastPractical2017">[Abraham et al. 2017]</span></td>
+<td style="text-align: center;">Generalised Paxos</td>
+<td style="text-align: center;"><span class="citation" data-cites="lamportGeneralizedConsensusPaxos2005">[Lamport 2005]</span></td>
+<td style="text-align: center;">non-triviality<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="sutraFastGenuineGeneralized2010">[Sutra and Shapiro 2010]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">FaB Paxos</td>
@@ -63,26 +51,26 @@
 <td style="text-align: center;"><span class="citation" data-cites="abrahamRevisitingFastPractical2017">[Abraham et al. 2017]</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">EPaxos</td>
-<td style="text-align: center;"><span class="citation" data-cites="moraruThereMoreConsensus2013">[Moraru et al. 2013]</span></td>
-<td style="text-align: center;">safety</td>
-<td style="text-align: center;"><span class="citation" data-cites="sutraCorrectnessEgalitarianPaxos2020">[Sutra 2020]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">DPaxos</td>
-<td style="text-align: center;"><span class="citation" data-cites="nawabDPaxosManagingData2018">[Nawab et al. 2018]</span></td>
-<td style="text-align: center;">safety</td>
-<td style="text-align: center;"><span class="citation" data-cites="whittakerMatchmakerPaxosReconfigurable2021">[Whittaker et al. 2021]</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">JPaxos</td>
-<td style="text-align: center;"><span class="citation" data-cites="konczakJPaxosStateMachine2011">[Kończak et al. 2011]</span></td>
+<td style="text-align: center;">Multi-Paxos<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="chandraPaxosMadeLive2007">[Chandra et al. 2007]</span></td>
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="michaelRecoveringSharedObjects2017">[Michael et al. 2017]</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">Multi-Paxos<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></td>
-<td style="text-align: center;"><span class="citation" data-cites="chandraPaxosMadeLive2007">[Chandra et al. 2007]</span></td>
+<td style="text-align: center;">Zyzzyva</td>
+<td style="text-align: center;"><span class="citation" data-cites="kotlaZyzzyvaSpeculativeByzantine2007 kotlaZyzzyvaSpeculativeByzantine2009">[Kotla et al. 2007; Kotla et al. 2010]</span></td>
+<td style="text-align: center;">safety</td>
+<td style="text-align: center;"><span class="citation" data-cites="abrahamRevisitingFastPractical2017">[Abraham et al. 2017]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CRAQ</td>
+<td style="text-align: center;"><span class="citation" data-cites="terraceObjectStorageCRAQ2009">[Terrace and Freedman 2009]</span></td>
+<td style="text-align: center;">safety<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="whittakerCRAQBug2020">[Whittaker 2020]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">JPaxos</td>
+<td style="text-align: center;"><span class="citation" data-cites="konczakJPaxosStateMachine2011">[Kończak et al. 2011]</span></td>
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="michaelRecoveringSharedObjects2017">[Michael et al. 2017]</span></td>
 </tr>
@@ -91,6 +79,36 @@
 <td style="text-align: center;"><span class="citation" data-cites="liskovViewstampedReplicationRevisited2012">[Liskov and Cowling 2012]</span></td>
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="michaelRecoveringSharedObjects2017">[Michael et al. 2017]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">EPaxos</td>
+<td style="text-align: center;"><span class="citation" data-cites="moraruThereMoreConsensus2013">[Moraru et al. 2013]</span></td>
+<td style="text-align: center;">safety</td>
+<td style="text-align: center;"><span class="citation" data-cites="sutraCorrectnessEgalitarianPaxos2020">[Sutra 2020]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Raft</td>
+<td style="text-align: center;"><span class="citation" data-cites="ongaroSearchUnderstandableConsensus2014">[Ongaro and Ousterhout 2014]</span></td>
+<td style="text-align: center;">liveness<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="hochConfigurationChanges2014">[Hoch 2014]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Raft</td>
+<td style="text-align: center;"><span class="citation" data-cites="ongaroConsensusBridgingTheory2014">[Ongaro 2014]</span></td>
+<td style="text-align: center;">safety<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="amos15812TermPaper2015 ongaroBugSingleserverMembership2015">[Amos and Zhang 2015; Ongaro 2015]</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Raft</td>
+<td style="text-align: center;"><span class="citation" data-cites="ongaroSearchUnderstandableConsensus2014 ongaroConsensusBridgingTheory2014">[Ongaro and Ousterhout 2014; Ongaro 2014]</span></td>
+<td style="text-align: center;">liveness</td>
+<td style="text-align: center;"><span class="citation" data-cites="howardRaftDoesNot2020">[Howard and Abraham 2020]</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">DPaxos</td>
+<td style="text-align: center;"><span class="citation" data-cites="nawabDPaxosManagingData2018">[Nawab et al. 2018]</span></td>
+<td style="text-align: center;">safety</td>
+<td style="text-align: center;"><span class="citation" data-cites="whittakerMatchmakerPaxosReconfigurable2021">[Whittaker et al. 2021]</span></td>
 </tr>
 </tbody>
 </table>
@@ -111,6 +129,9 @@
 <div id="ref-chandraPaxosMadeLive2007">
 <p><span class="smallcaps">Chandra, T.D., Griesemer, R., and Redstone, J.</span> 2007. Paxos made live: An engineering perspective. <em>Proceedings of the twenty-sixth annual ACM symposium on Principles of distributed computing - PODC ’07</em>, ACM Press, 398–407.</p>
 </div>
+<div id="ref-hochConfigurationChanges2014">
+<p><span class="smallcaps">Hoch, E.</span> 2014. Configuration changes. <a href="https://groups.google.com/g/raft-dev/c/xux5HRxH3Ic/m/mz_PDK-qMJgJ">https://groups.google.com/g/raft-dev/c/xux5HRxH3Ic/m/mz_PDK-qMJgJ</a>.</p>
+</div>
 <div id="ref-howardRaftDoesNot2020">
 <p><span class="smallcaps">Howard, H. and Abraham, I.</span> 2020. Raft does not Guarantee Liveness in the face of Network Faults. <a href="https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/">https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/</a>.</p>
 </div>
@@ -122,6 +143,9 @@
 </div>
 <div id="ref-kotlaZyzzyvaSpeculativeByzantine2009">
 <p><span class="smallcaps">Kotla, R., Alvisi, L., Dahlin, M., Clement, A., and Wong, E.</span> 2010. Zyzzyva: Speculative byzantine fault tolerance. <em>ACM Trans. Comput. Syst.</em> <em>27</em>, 4.</p>
+</div>
+<div id="ref-lamportGeneralizedConsensusPaxos2005">
+<p><span class="smallcaps">Lamport, L.</span> 2005. <em>Generalized Consensus and Paxos</em>. Microsoft Research.</p>
 </div>
 <div id="ref-liben-nowellAnalysisEvolutionPeertopeer2002">
 <p><span class="smallcaps">Liben-Nowell, D., Balakrishnan, H., and Karger, D.</span> 2002. Analysis of the evolution of peer-to-peer systems. <em>Proceedings of the twenty-first annual symposium on principles of distributed computing</em>, Association for Computing Machinery, 233–242.</p>
@@ -157,10 +181,19 @@
 <p><span class="smallcaps">Rowstron, A. and Druschel, P.</span> 2001. Pastry: Scalable, Decentralized Object Location, and Routing for Large-Scale Peer-to-Peer Systems. <em>Middleware 2001</em>, Springer, 329–350.</p>
 </div>
 <div id="ref-stoicaChordScalablePeertopeer2001">
-<p><span class="smallcaps">Stoica, I., Morris, R., Liben-Nowell, D., et al.</span> 2003. Chord: A scalable peer-to-peer lookup protocol for internet applications. <em>IEEE/ACM Trans. Netw.</em> <em>11</em>, 1, 17–32.</p>
+<p><span class="smallcaps">Stoica, I., Morris, R., Karger, D., Kaashoek, M.F., and Balakrishnan, H.</span> 2001. Chord: A scalable peer-to-peer lookup service for internet applications. <em>SIGCOMM Comput. Commun. Rev.</em> <em>31</em>, 4, 149–160.</p>
 </div>
 <div id="ref-sutraCorrectnessEgalitarianPaxos2020">
 <p><span class="smallcaps">Sutra, P.</span> 2020. On the correctness of Egalitarian Paxos. <em>Information Processing Letters</em> <em>156</em>.</p>
+</div>
+<div id="ref-sutraFastGenuineGeneralized2010">
+<p><span class="smallcaps">Sutra, P. and Shapiro, M.</span> 2010. <em>Fast Genuine Generalized Consensus</em>..</p>
+</div>
+<div id="ref-terraceObjectStorageCRAQ2009">
+<p><span class="smallcaps">Terrace, J. and Freedman, M.J.</span> 2009. Object Storage on {CRAQ}: High-Throughput Chain Replication for Read-Mostly Workloads..</p>
+</div>
+<div id="ref-whittakerCRAQBug2020">
+<p><span class="smallcaps">Whittaker, M.</span> 2020. CRAQ Bug. <a href="https://github.com/mwhittaker/craq_bug">https://github.com/mwhittaker/craq_bug</a>.</p>
 </div>
 <div id="ref-whittakerMatchmakerPaxosReconfigurable2021">
 <p><span class="smallcaps">Whittaker, M., Hellerstein, J.M., Giridharan, N., Szekeres, A., Howard, H., and Nawab, F.</span> 2021. Matchmaker Paxos: A Reconfigurable Consensus Protocol. <em>Journal of Systems Research</em>, 22.</p>
@@ -175,9 +208,12 @@
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>The single-server membership change algorithm is described in Ongaro’s PhD thesis. The paper version of Raft uses joint consensus and does not have this error.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Eventual reachability is Chord’s key correctness property.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Eventual reachability is Chord’s key correctness property.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Acceptors might accept commands that have not been proposed.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 <li id="fn3"><p>As described in Paxos Made Live.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Client reads might fail due to incorrect garbage collection.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>The joint consensus membership change algorithm described in the paper version of Raft had a liveness bug, which was fixed in Ongaro’s PhD thesis.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>The bug is in the single-server membership change scheme described in Ongaro’s thesis.<a href="#fnref6" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
 </body>

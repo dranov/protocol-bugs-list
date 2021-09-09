@@ -477,3 +477,54 @@ Publisher: IEEE Computer Society},
 	year = {2007},
 	pages = {398--407},
 }
+
+@misc{hochConfigurationChanges2014,
+	title = {Configuration changes},
+	url = {https://groups.google.com/g/raft-dev/c/xux5HRxH3Ic/m/mz_PDK-qMJgJ},
+	urldate = {2021-09-09},
+	author = {Hoch, Ezra},
+	month = feb,
+	year = {2014},
+}
+
+@techreport{sutraFastGenuineGeneralized2010,
+	title = {Fast {Genuine} {Generalized} {Consensus}},
+	url = {https://drive.google.com/open?id=0BwFkGepvBDQoRjNYRGJTdWQ0SzA},
+	abstract = {Consensus is a central primitive for building replicated systems, but its latency constitutes a bottleneck. A well-known solution to consensus is Fast Paxos. In a recent paper, Lamport enhances Fast Paxos by leveraging the commutativity of concurrent commands. The new primitive, called Generalized Paxos, reduces the collision rate, and thus the latency of Fast Paxos. However if a collision occurs, the latency of Generalized Paxos equals six communication steps, which is higher than Fast Paxos. This paper presents FGGC , a novel consensus algorithm that reduces recovery delay when a collision occurs to one. FGGC tolerates f {\textless} n/2 replicas crashes, and during failure-free runs, processes learn commands in two steps if all commands commute, and three steps otherwise; this is optimal. Moreover, as long as no fault occurs, FGGC needs only f + 1 replicas to progress.},
+	author = {Sutra, Pierre and Shapiro, Marc},
+	month = feb,
+	year = {2010},
+	note = {(corrected August 2010). Section 6.3.},
+	pages = {62},
+}
+
+@techreport{lamportGeneralizedConsensusPaxos2005,
+	title = {Generalized {Consensus} and {Paxos}},
+	url = {https://www.microsoft.com/en-us/research/publication/generalized-consensus-and-paxos/},
+	abstract = {In [153], I proved lower bounds for the number of message delays required to reach consensus. I showed that the best algorithms can reach consensus in the normal case in 2 message delays. This result in turn led me to a new version of the Paxos algorithm of [122] called Fast Paxos, described in [158], […]},
+	number = {MSR-TR-2005-33},
+	institution = {Microsoft Research},
+	author = {Lamport, Leslie},
+	month = mar,
+	year = {2005},
+}
+
+@unpublished{whittakerCRAQBug2020,
+	title = {{CRAQ} {Bug}},
+	url = {https://github.com/mwhittaker/craq_bug},
+	abstract = {A minor bug in CRAQ's garbage collection},
+	urldate = {2021-09-09},
+	author = {Whittaker, Michael},
+	month = jun,
+	year = {2020},
+	note = {original-date: 2020-06-13T18:44:33Z},
+}
+
+@inproceedings{terraceObjectStorageCRAQ2009,
+	title = {Object {Storage} on \{{CRAQ}\}: {High}-{Throughput} {Chain} {Replication} for {Read}-{Mostly} {Workloads}},
+	shorttitle = {Object {Storage} on \{{CRAQ}\}},
+	url = {https://www.usenix.org/conference/usenix-09/object-storage-craq-high-throughput-chain-replication-read-mostly-workloads},
+	urldate = {2021-09-09},
+	author = {Terrace, Jeff and Freedman, Michael J.},
+	year = {2009},
+}

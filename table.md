@@ -1,16 +1,19 @@
-|     Protocol     |                     Reference                      |   Violation   |            Counter-example             |
-| :--------------: | :------------------------------------------------: | :-----------: | :------------------------------------: |
-|       Raft       |                  \[Ongaro 2014\]                   |  safety\[1\]  |  \[Amos and Zhang 2015; Ongaro 2015\]  |
-|       Raft       |    \[Ongaro and Ousterhout 2014; Ongaro 2014\]     |   liveness    |      \[Howard and Abraham 2020\]       |
-|      Chord       |  \[Stoica et al. 2003; Liben-Nowell et al. 2002\]  | liveness\[2\] |        \[Zave 2012; Zave 2017\]        |
-|      Pastry      |           \[Rowstron and Druschel 2001\]           |    safety     | \[Azmy et al. 2016; Azmy et al. 2018\] |
-|     Zyzzyva      |      \[Kotla et al. 2007; Kotla et al. 2010\]      |    safety     |        \[Abraham et al. 2017\]         |
-|    FaB Paxos     | \[Martin and Alvisi 2005; Martin and Alvisi 2006\] |   liveness    |        \[Abraham et al. 2017\]         |
-|      EPaxos      |               \[Moraru et al. 2013\]               |    safety     |             \[Sutra 2020\]             |
-|      DPaxos      |               \[Nawab et al. 2018\]                |    safety     |       \[Whittaker et al. 2021\]        |
-|      JPaxos      |              \[Kończak et al. 2011\]               |    safety     |        \[Michael et al. 2017\]         |
-| Multi-Paxos\[3\] |              \[Chandra et al. 2007\]               |    safety     |        \[Michael et al. 2017\]         |
-|   VR Revisited   |            \[Liskov and Cowling 2012\]             |    safety     |        \[Michael et al. 2017\]         |
+|     Protocol      |                     Reference                      |      Violation      |            Counter-example             |
+| :---------------: | :------------------------------------------------: | :-----------------: | :------------------------------------: |
+|       Chord       |  \[Stoica et al. 2001; Liben-Nowell et al. 2002\]  |    liveness\[1\]    |        \[Zave 2012; Zave 2017\]        |
+|      Pastry       |           \[Rowstron and Druschel 2001\]           |       safety        | \[Azmy et al. 2016; Azmy et al. 2018\] |
+| Generalised Paxos |                  \[Lamport 2005\]                  | non-triviality\[2\] |       \[Sutra and Shapiro 2010\]       |
+|     FaB Paxos     | \[Martin and Alvisi 2005; Martin and Alvisi 2006\] |      liveness       |        \[Abraham et al. 2017\]         |
+| Multi-Paxos\[3\]  |              \[Chandra et al. 2007\]               |       safety        |        \[Michael et al. 2017\]         |
+|      Zyzzyva      |      \[Kotla et al. 2007; Kotla et al. 2010\]      |       safety        |        \[Abraham et al. 2017\]         |
+|       CRAQ        |           \[Terrace and Freedman 2009\]            |     safety\[4\]     |           \[Whittaker 2020\]           |
+|      JPaxos       |              \[Kończak et al. 2011\]               |       safety        |        \[Michael et al. 2017\]         |
+|   VR Revisited    |            \[Liskov and Cowling 2012\]             |       safety        |        \[Michael et al. 2017\]         |
+|      EPaxos       |               \[Moraru et al. 2013\]               |       safety        |             \[Sutra 2020\]             |
+|       Raft        |           \[Ongaro and Ousterhout 2014\]           |    liveness\[5\]    |             \[Hoch 2014\]              |
+|       Raft        |                  \[Ongaro 2014\]                   |     safety\[6\]     |  \[Amos and Zhang 2015; Ongaro 2015\]  |
+|       Raft        |    \[Ongaro and Ousterhout 2014; Ongaro 2014\]     |      liveness       |      \[Howard and Abraham 2020\]       |
+|      DPaxos       |               \[Nawab et al. 2018\]                |       safety        |       \[Whittaker et al. 2021\]        |
 
 (Reference list starts on the next page.)
 
@@ -58,6 +61,13 @@ distributed computing - PODC ’07*, ACM Press, 398–407.
 
 </div>
 
+<div id="ref-hochConfigurationChanges2014">
+
+<span class="smallcaps">Hoch, E.</span> 2014. Configuration changes.
+<https://groups.google.com/g/raft-dev/c/xux5HRxH3Ic/m/mz_PDK-qMJgJ>.
+
+</div>
+
 <div id="ref-howardRaftDoesNot2020">
 
 <span class="smallcaps">Howard, H. and Abraham, I.</span> 2020. Raft
@@ -87,6 +97,13 @@ tolerance. *SIGOPS Oper. Syst. Rev.* *41*, 6, 45–58.
 <span class="smallcaps">Kotla, R., Alvisi, L., Dahlin, M., Clement, A.,
 and Wong, E.</span> 2010. Zyzzyva: Speculative byzantine fault
 tolerance. *ACM Trans. Comput. Syst.* *27*, 4.
+
+</div>
+
+<div id="ref-lamportGeneralizedConsensusPaxos2005">
+
+<span class="smallcaps">Lamport, L.</span> 2005. *Generalized Consensus
+and Paxos*. Microsoft Research.
 
 </div>
 
@@ -182,9 +199,10 @@ Large-Scale Peer-to-Peer Systems. *Middleware 2001*, Springer, 329–350.
 
 <div id="ref-stoicaChordScalablePeertopeer2001">
 
-<span class="smallcaps">Stoica, I., Morris, R., Liben-Nowell, D., et
-al.</span> 2003. Chord: A scalable peer-to-peer lookup protocol for
-internet applications. *IEEE/ACM Trans. Netw.* *11*, 1, 17–32.
+<span class="smallcaps">Stoica, I., Morris, R., Karger, D., Kaashoek,
+M.F., and Balakrishnan, H.</span> 2001. Chord: A scalable peer-to-peer
+lookup service for internet applications. *SIGCOMM Comput. Commun. Rev.*
+*31*, 4, 149–160.
 
 </div>
 
@@ -192,6 +210,28 @@ internet applications. *IEEE/ACM Trans. Netw.* *11*, 1, 17–32.
 
 <span class="smallcaps">Sutra, P.</span> 2020. On the correctness of
 Egalitarian Paxos. *Information Processing Letters* *156*.
+
+</div>
+
+<div id="ref-sutraFastGenuineGeneralized2010">
+
+<span class="smallcaps">Sutra, P. and Shapiro, M.</span> 2010. *Fast
+Genuine Generalized Consensus*..
+
+</div>
+
+<div id="ref-terraceObjectStorageCRAQ2009">
+
+<span class="smallcaps">Terrace, J. and Freedman, M.J.</span> 2009.
+Object Storage on {CRAQ}: High-Throughput Chain Replication for
+Read-Mostly Workloads..
+
+</div>
+
+<div id="ref-whittakerCRAQBug2020">
+
+<span class="smallcaps">Whittaker, M.</span> 2020. CRAQ Bug.
+<https://github.com/mwhittaker/craq_bug>.
 
 </div>
 
@@ -222,10 +262,17 @@ Engineering* *43*, 12, 1144–1156.
 
 </div>
 
-1.  The single-server membership change algorithm is described in
-    Ongaro’s PhD thesis. The paper version of Raft uses joint
-    consensus and does not have this error.
+1.  Eventual reachability is Chord’s key correctness property.
 
-2.  Eventual reachability is Chord’s key correctness property.
+2.  Acceptors might accept commands that have not been proposed.
 
 3.  As described in Paxos Made Live.
+
+4.  Client reads might fail due to incorrect garbage collection.
+
+5.  The joint consensus membership change algorithm described in the
+    paper version of Raft had a liveness bug, which was fixed in
+    Ongaro’s PhD thesis.
+
+6.  The bug is in the single-server membership change scheme described
+    in Ongaro’s thesis.
