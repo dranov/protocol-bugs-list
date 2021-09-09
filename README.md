@@ -6,22 +6,22 @@ The table below is generated from `table.tex`. Please edit that file if you are 
 
 ## Table of errors
 
-|     Protocol      |                     Reference                      |      Violation      |            Counter-example             |
-| :---------------: | :------------------------------------------------: | :-----------------: | :------------------------------------: |
-|       Chord       |  \[Stoica et al. 2001; Liben-Nowell et al. 2002\]  |    liveness\[1\]    |        \[Zave 2012; Zave 2017\]        |
-|      Pastry       |           \[Rowstron and Druschel 2001\]           |       safety        | \[Azmy et al. 2016; Azmy et al. 2018\] |
-| Generalised Paxos |                  \[Lamport 2005\]                  | non-triviality\[2\] |       \[Sutra and Shapiro 2010\]       |
-|     FaB Paxos     | \[Martin and Alvisi 2005; Martin and Alvisi 2006\] |      liveness       |        \[Abraham et al. 2017\]         |
-| Multi-Paxos\[3\]  |              \[Chandra et al. 2007\]               |       safety        |        \[Michael et al. 2017\]         |
-|      Zyzzyva      |      \[Kotla et al. 2007; Kotla et al. 2010\]      |       safety        |        \[Abraham et al. 2017\]         |
-|       CRAQ        |           \[Terrace and Freedman 2009\]            |     safety\[4\]     |           \[Whittaker 2020\]           |
-|      JPaxos       |              \[Kończak et al. 2011\]               |       safety        |        \[Michael et al. 2017\]         |
-|   VR Revisited    |            \[Liskov and Cowling 2012\]             |       safety        |        \[Michael et al. 2017\]         |
-|      EPaxos       |               \[Moraru et al. 2013\]               |       safety        |             \[Sutra 2020\]             |
-|       Raft        |           \[Ongaro and Ousterhout 2014\]           |    liveness\[5\]    |             \[Hoch 2014\]              |
-|       Raft        |                  \[Ongaro 2014\]                   |     safety\[6\]     |  \[Amos and Zhang 2015; Ongaro 2015\]  |
-|       Raft        |    \[Ongaro and Ousterhout 2014; Ongaro 2014\]     |      liveness       |      \[Howard and Abraham 2020\]       |
-|      DPaxos       |               \[Nawab et al. 2018\]                |       safety        |       \[Whittaker et al. 2021\]        |
+|     Protocol      |                     Reference                      |      Violation      |                 Counter-example                 |
+| :---------------: | :------------------------------------------------: | :-----------------: | :---------------------------------------------: |
+|       Chord       |  \[Stoica et al. 2001; Liben-Nowell et al. 2002\]  |    liveness\[1\]    |            \[Zave 2012; Zave 2017\]             |
+|      Pastry       |           \[Rowstron and Druschel 2001\]           |       safety        |     \[Azmy et al. 2016; Azmy et al. 2018\]      |
+| Generalised Paxos |                  \[Lamport 2005\]                  | non-triviality\[2\] |           \[Sutra and Shapiro 2010\]            |
+|     FaB Paxos     | \[Martin and Alvisi 2005; Martin and Alvisi 2006\] |      liveness       |             \[Abraham et al. 2017\]             |
+| Multi-Paxos\[3\]  |              \[Chandra et al. 2007\]               |       safety        |             \[Michael et al. 2017\]             |
+|      Zyzzyva      |      \[Kotla et al. 2007; Kotla et al. 2010\]      |       safety        |             \[Abraham et al. 2017\]             |
+|       CRAQ        |           \[Terrace and Freedman 2009\]            |     safety\[4\]     |               \[Whittaker 2020\]                |
+|      JPaxos       |              \[Kończak et al. 2011\]               |       safety        |             \[Michael et al. 2017\]             |
+|   VR Revisited    |            \[Liskov and Cowling 2012\]             |       safety        |             \[Michael et al. 2017\]             |
+|      EPaxos       |               \[Moraru et al. 2013\]               |       safety        |                 \[Sutra 2020\]                  |
+|       Raft        |           \[Ongaro and Ousterhout 2014\]           |    liveness\[5\]    |                  \[Hoch 2014\]                  |
+|       Raft        |                  \[Ongaro 2014\]                   |     safety\[6\]     |      \[Amos and Zhang 2015; Ongaro 2015\]       |
+|       Raft        |    \[Ongaro and Ousterhout 2014; Ongaro 2014\]     |      liveness       | \[Howard and Abraham 2020; Jensen et al. 2021\] |
+|      DPaxos       |               \[Nawab et al. 2018\]                |       safety        |            \[Whittaker et al. 2021\]            |
 
 
 ## Footnotes
@@ -47,6 +47,8 @@ The following people suggested additions to the list:
 
 - [Dan Ports](https://drkp.net/)
 - [Michael Whittaker](https://mwhittaker.github.io/)
+- [Heidi Howard][https://www.heidihoward.co.uk/]
+
 ## References
 
 <div id="refs" class="references">
@@ -105,6 +107,15 @@ distributed computing - PODC ’07*, ACM Press, 398–407.
 <span class="smallcaps">Howard, H. and Abraham, I.</span> 2020. Raft
 does not Guarantee Liveness in the face of Network Faults.
 <https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/>.
+
+</div>
+
+<div id="ref-jensenExaminingRaftBehaviour2021">
+
+<span class="smallcaps">Jensen, C., Howard, H., and Mortier, R.</span>
+2021. Examining Raft’s behaviour during partial network failures.
+*Proceedings of the 1st Workshop on High Availability and Observability
+of Cloud Systems*, Association for Computing Machinery, 11–17.
 
 </div>
 
