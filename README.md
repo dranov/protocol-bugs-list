@@ -18,10 +18,16 @@ The table below is generated from `table.tex`. Please edit that file if you are 
 |      JPaxos       |              \[Kończak et al. 2011\]               |       safety        |             \[Michael et al. 2017\]             |
 |   VR Revisited    |            \[Liskov and Cowling 2012\]             |       safety        |             \[Michael et al. 2017\]             |
 |      EPaxos       |               \[Moraru et al. 2013\]               |       safety        |                 \[Sutra 2020\]                  |
+|      EPaxos       |               \[Moraru et al. 2013\]               |       safety        |               \[Whittaker 2021\]                |
 |       Raft        |           \[Ongaro and Ousterhout 2014\]           |    liveness\[5\]    |                  \[Hoch 2014\]                  |
 |       Raft        |                  \[Ongaro 2014\]                   |     safety\[6\]     |      \[Amos and Zhang 2015; Ongaro 2015\]       |
 |       Raft        |    \[Ongaro and Ousterhout 2014; Ongaro 2014\]     |      liveness       | \[Howard and Abraham 2020; Jensen et al. 2021\] |
+|       hBFT        |                \[Duan et al. 2015\]                |       safety        |            \[Shrestha et al. 2019\]             |
+|    Tendermint     |                  \[Buchman 2016\]                  |      liveness       |           \[Cachin and Vukolić 2017\]           |
+|      CAESAR       |                \[Arun et al. 2017\]                |      liveness       |              \[Enes et al. 2021\]               |
 |      DPaxos       |               \[Nawab et al. 2018\]                |       safety        |            \[Whittaker et al. 2021\]            |
+|   Sync HotStuff   |              \[Abraham et al. 2019\]               |  safety & liveness  |            \[Momose and Cruz 2019\]             |
+|      Gasper       |              \[Buterin et al. 2020\]               |  safety & liveness  |               \[Neu et al. 2021\]               |
 
 
 ## Footnotes
@@ -48,6 +54,11 @@ The following people suggested additions to the list:
 - [Dan Ports](https://drkp.net/)
 - [Michael Whittaker](https://mwhittaker.github.io/)
 - [Heidi Howard](https://www.heidihoward.co.uk/)
+- [François Garillot](https://www.garillot.net/)
+- [Prateek Saxena](https://www.comp.nus.edu.sg/~prateeks/)
+- [Nibesh Shrestha](https://cs.rit.edu/~nxs4564/)
+- [Benedict Elliott Smith](https://twitter.com/_belliottsmith)
+- [Adi Seredinschi](https://twitter.com/AdiSeredinschi)
 
 ## References
 
@@ -61,11 +72,28 @@ Byzantine Fault Tolerance. *arXiv:1712.01367 \[cs\]*.
 
 </div>
 
+<div id="ref-abrahamSyncHotStuffSimple2019">
+
+<span class="smallcaps">Abraham, I., Malkhi, D., Nayak, K., Ren, L., and
+Yin, M.</span> 2019. *Sync HotStuff: Simple and Practical Synchronous
+State Machine Replication*..
+
+</div>
+
 <div id="ref-amos15812TermPaper2015">
 
 <span class="smallcaps">Amos, B. and Zhang, H.</span> 2015. *15-812 Term
 Paper: Specifying and proving cluster membership for the Raft
 distributed consensus algorithm*..
+
+</div>
+
+<div id="ref-arunSpeedingConsensusChasing2017">
+
+<span class="smallcaps">Arun, B., Peluso, S., Palmieri, R., Losa, G.,
+and Ravindran, B.</span> 2017. Speeding up Consensus by Chasing Fast
+Decisions. *2017 47th Annual IEEE/IFIP International Conference on
+Dependable Systems and Networks (DSN)*, 49–60.
 
 </div>
 
@@ -86,12 +114,51 @@ Computer Programming* *158*, 64–80.
 
 </div>
 
+<div id="ref-buchmanTendermintByzantineFault2016">
+
+<span class="smallcaps">Buchman, E.</span> 2016. Tendermint: Byzantine
+Fault Tolerance in the Age of Blockchains.
+<https://atrium.lib.uoguelph.ca/xmlui/handle/10214/9769>.
+
+</div>
+
+<div id="ref-buterinCombiningGHOSTCasper2020">
+
+<span class="smallcaps">Buterin, V., Hernandez, D., Kamphefner, T., et
+al.</span> 2020. Combining GHOST and Casper. *arXiv:2003.03052 \[cs\]*.
+
+</div>
+
+<div id="ref-cachinBlockchainConsensusProtocols2017">
+
+<span class="smallcaps">Cachin, C. and Vukolić, M.</span> 2017.
+Blockchain Consensus Protocols in the Wild. *arXiv:1707.01873 \[cs\]*.
+
+</div>
+
 <div id="ref-chandraPaxosMadeLive2007">
 
 <span class="smallcaps">Chandra, T.D., Griesemer, R., and Redstone,
 J.</span> 2007. Paxos made live: An engineering perspective.
 *Proceedings of the twenty-sixth annual ACM symposium on Principles of
 distributed computing - PODC ’07*, ACM Press, 398–407.
+
+</div>
+
+<div id="ref-duanHBFTSpeculativeByzantine2015">
+
+<span class="smallcaps">Duan, S., Peisert, S., and Levitt, K.N.</span>
+2015. hBFT: Speculative Byzantine Fault Tolerance with Minimum Cost.
+*IEEE Transactions on Dependable and Secure Computing* *12*, 1, 58–70.
+
+</div>
+
+<div id="ref-enesEfficientReplicationTimestamp2021">
+
+<span class="smallcaps">Enes, V., Baquero, C., Gotsman, A., and Sutra,
+P.</span> 2021. Efficient replication via timestamp stability.
+*Proceedings of the Sixteenth European Conference on Computer Systems*,
+ACM, 178–193.
 
 </div>
 
@@ -190,6 +257,13 @@ Storage. 27.
 
 </div>
 
+<div id="ref-momoseForceLockingAttackSync2019">
+
+<span class="smallcaps">Momose, A. and Cruz, J.P.</span> 2019.
+*Force-Locking Attack on Sync Hotstuff*..
+
+</div>
+
 <div id="ref-moraruThereMoreConsensus2013">
 
 <span class="smallcaps">Moraru, I., Andersen, D.G., and Kaminsky,
@@ -205,6 +279,14 @@ Principles*, Association for Computing Machinery, 358–372.
 2018. DPaxos: Managing Data Closer to Users for Low-Latency and Mobile
 Applications. *Proceedings of the 2018 International Conference on
 Management of Data*, Association for Computing Machinery, 1221–1236.
+
+</div>
+
+<div id="ref-neuEbbandFlowProtocolsResolution2021">
+
+<span class="smallcaps">Neu, J., Tas, E.N., and Tse, D.</span> 2021.
+Ebb-and-Flow Protocols: A Resolution of the Availability-Finality
+Dilemma. *arXiv:2009.04987 \[cs\]*.
 
 </div>
 
@@ -237,6 +319,14 @@ Association, 305–320.
 <span class="smallcaps">Rowstron, A. and Druschel, P.</span> 2001.
 Pastry: Scalable, Decentralized Object Location, and Routing for
 Large-Scale Peer-to-Peer Systems. *Middleware 2001*, Springer, 329–350.
+
+</div>
+
+<div id="ref-shresthaRevisitingHBFTSpeculative2019">
+
+<span class="smallcaps">Shrestha, N., Kumar, M., and Duan, S.</span>
+2019. Revisiting hBFT: Speculative Byzantine Fault Tolerance with
+Minimum Cost. *arXiv:1902.08505 \[cs\]*.
 
 </div>
 
@@ -275,6 +365,14 @@ Read-Mostly Workloads..
 
 <span class="smallcaps">Whittaker, M.</span> 2020. CRAQ Bug.
 <https://github.com/mwhittaker/craq_bug>.
+
+</div>
+
+<div id="ref-whittakerEPaxosDependencySet2021">
+
+<span class="smallcaps">Whittaker, M.</span> 2021. EPaxos Dependency Set
+Compaction Bug.
+<https://github.com/mwhittaker/bipartisan_paxos/blob/cbd99cc735215d18c163dc41cb0a05edcb55437d/epaxos_bugs/epaxos_dependency_bug.pdf>.
 
 </div>
 
