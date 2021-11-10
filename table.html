@@ -27,120 +27,126 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">Chord</td>
-<td style="text-align: center;"><span class="citation" data-cites="stoicaChordScalablePeertopeer2001 liben-nowellAnalysisEvolutionPeertopeer2002">[Stoica et al. 2001; Liben-Nowell et al. 2002]</span></td>
-<td style="text-align: center;">liveness<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></td>
-<td style="text-align: center;"><span class="citation" data-cites="zaveUsingLightweightModeling2012 zaveReasoningIdentifierSpaces2017">[Zave 2012; Zave 2017]</span></td>
+<td style="text-align: center;">PBFT<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="castroPracticalByzantineFault1999">[Castro and Liskov 1999]</span></td>
+<td style="text-align: center;">liveness</td>
+<td style="text-align: center;"><span class="citation" data-cites="bergerMakingReadsBFT2021">[Berger et al. 2021]</span></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">Chord</td>
+<td style="text-align: center;"><span class="citation" data-cites="stoicaChordScalablePeertopeer2001 liben-nowellAnalysisEvolutionPeertopeer2002">[Stoica et al. 2001; Liben-Nowell et al. 2002]</span></td>
+<td style="text-align: center;">liveness<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="zaveUsingLightweightModeling2012 zaveReasoningIdentifierSpaces2017">[Zave 2012; Zave 2017]</span></td>
+</tr>
+<tr class="odd">
 <td style="text-align: center;">Pastry</td>
 <td style="text-align: center;"><span class="citation" data-cites="rowstronPastryScalableDecentralized2001">[Rowstron and Druschel 2001]</span></td>
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="azmyRigorousCorrectnessProof2016 azmyMachinecheckedCorrectnessProof2018">[Azmy et al. 2016; Azmy et al. 2018]</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">Generalised Paxos</td>
 <td style="text-align: center;"><span class="citation" data-cites="lamportGeneralizedConsensusPaxos2005">[Lamport 2005]</span></td>
-<td style="text-align: center;">non-triviality<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></td>
+<td style="text-align: center;">non-triviality<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></td>
 <td style="text-align: center;"><span class="citation" data-cites="sutraFastGenuineGeneralized2010">[Sutra and Shapiro 2010]</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">FaB Paxos</td>
 <td style="text-align: center;"><span class="citation" data-cites="martinFastByzantineConsensus2005 martinFastByzantineConsensus2006">[Martin and Alvisi 2005; Martin and Alvisi 2006]</span></td>
 <td style="text-align: center;">liveness</td>
 <td style="text-align: center;"><span class="citation" data-cites="abrahamRevisitingFastPractical2017">[Abraham et al. 2017]</span></td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">Multi-Paxos<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></td>
+<tr class="even">
+<td style="text-align: center;">Multi-Paxos<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></td>
 <td style="text-align: center;"><span class="citation" data-cites="chandraPaxosMadeLive2007">[Chandra et al. 2007]</span></td>
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="michaelRecoveringSharedObjects2017">[Michael et al. 2017]</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">Zyzzyva</td>
 <td style="text-align: center;"><span class="citation" data-cites="kotlaZyzzyvaSpeculativeByzantine2007 kotlaZyzzyvaSpeculativeByzantine2009">[Kotla et al. 2007; Kotla et al. 2010]</span></td>
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="abrahamRevisitingFastPractical2017">[Abraham et al. 2017]</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">CRAQ</td>
 <td style="text-align: center;"><span class="citation" data-cites="terraceObjectStorageCRAQ2009">[Terrace and Freedman 2009]</span></td>
-<td style="text-align: center;">safety<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></td>
+<td style="text-align: center;">safety<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></td>
 <td style="text-align: center;"><span class="citation" data-cites="whittakerCRAQBug2020">[Whittaker 2020]</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">JPaxos</td>
 <td style="text-align: center;"><span class="citation" data-cites="konczakJPaxosStateMachine2011">[Kończak et al. 2011]</span></td>
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="michaelRecoveringSharedObjects2017">[Michael et al. 2017]</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">VR Revisited</td>
 <td style="text-align: center;"><span class="citation" data-cites="liskovViewstampedReplicationRevisited2012">[Liskov and Cowling 2012]</span></td>
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="michaelRecoveringSharedObjects2017">[Michael et al. 2017]</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">EPaxos</td>
 <td style="text-align: center;"><span class="citation" data-cites="moraruThereMoreConsensus2013">[Moraru et al. 2013]</span></td>
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="sutraCorrectnessEgalitarianPaxos2020">[Sutra 2020]</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">EPaxos</td>
 <td style="text-align: center;"><span class="citation" data-cites="moraruThereMoreConsensus2013">[Moraru et al. 2013]</span></td>
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="whittakerEPaxosDependencySet2021">[Whittaker 2021]</span></td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">Raft</td>
-<td style="text-align: center;"><span class="citation" data-cites="ongaroSearchUnderstandableConsensus2014">[Ongaro and Ousterhout 2014]</span></td>
-<td style="text-align: center;">liveness<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></td>
-<td style="text-align: center;"><span class="citation" data-cites="hochConfigurationChanges2014">[Hoch 2014]</span></td>
-</tr>
 <tr class="odd">
 <td style="text-align: center;">Raft</td>
-<td style="text-align: center;"><span class="citation" data-cites="ongaroConsensusBridgingTheory2014">[Ongaro 2014]</span></td>
-<td style="text-align: center;">safety<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></td>
-<td style="text-align: center;"><span class="citation" data-cites="amos15812TermPaper2015 ongaroBugSingleserverMembership2015">[Amos and Zhang 2015; Ongaro 2015]</span></td>
+<td style="text-align: center;"><span class="citation" data-cites="ongaroSearchUnderstandableConsensus2014">[Ongaro and Ousterhout 2014]</span></td>
+<td style="text-align: center;">liveness<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="hochConfigurationChanges2014">[Hoch 2014]</span></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">Raft</td>
+<td style="text-align: center;"><span class="citation" data-cites="ongaroConsensusBridgingTheory2014">[Ongaro 2014]</span></td>
+<td style="text-align: center;">safety<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></td>
+<td style="text-align: center;"><span class="citation" data-cites="amos15812TermPaper2015 ongaroBugSingleserverMembership2015">[Amos and Zhang 2015; Ongaro 2015]</span></td>
+</tr>
+<tr class="odd">
 <td style="text-align: center;">Raft</td>
 <td style="text-align: center;"><span class="citation" data-cites="ongaroSearchUnderstandableConsensus2014 ongaroConsensusBridgingTheory2014">[Ongaro and Ousterhout 2014; Ongaro 2014]</span></td>
 <td style="text-align: center;">liveness</td>
 <td style="text-align: center;"><span class="citation" data-cites="howardRaftDoesNot2020 jensenExaminingRaftBehaviour2021">[Howard and Abraham 2020; Jensen et al. 2021]</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">hBFT</td>
 <td style="text-align: center;"><span class="citation" data-cites="duanHBFTSpeculativeByzantine2015">[Duan et al. 2015]</span></td>
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="shresthaRevisitingHBFTSpeculative2019">[Shrestha et al. 2019]</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">Tendermint</td>
 <td style="text-align: center;"><span class="citation" data-cites="buchmanTendermintByzantineFault2016">[Buchman 2016]</span></td>
 <td style="text-align: center;">liveness</td>
 <td style="text-align: center;"><span class="citation" data-cites="cachinBlockchainConsensusProtocols2017">[Cachin and Vukolić 2017]</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">CAESAR</td>
 <td style="text-align: center;"><span class="citation" data-cites="arunSpeedingConsensusChasing2017">[Arun et al. 2017]</span></td>
 <td style="text-align: center;">liveness</td>
 <td style="text-align: center;"><span class="citation" data-cites="enesEfficientReplicationTimestamp2021">[Enes et al. 2021]</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">DPaxos</td>
 <td style="text-align: center;"><span class="citation" data-cites="nawabDPaxosManagingData2018">[Nawab et al. 2018]</span></td>
 <td style="text-align: center;">safety</td>
 <td style="text-align: center;"><span class="citation" data-cites="whittakerMatchmakerPaxosReconfigurable2021">[Whittaker et al. 2021]</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">Sync HotStuff</td>
 <td style="text-align: center;"><span class="citation" data-cites="abrahamSyncHotStuffSimple2019">[Abraham et al. 2019]</span></td>
 <td style="text-align: center;">safety &amp; liveness</td>
 <td style="text-align: center;"><span class="citation" data-cites="momoseForceLockingAttackSync2019">[Momose and Cruz 2019]</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">Gasper</td>
 <td style="text-align: center;"><span class="citation" data-cites="buterinCombiningGHOSTCasper2020">[Buterin et al. 2020]</span></td>
 <td style="text-align: center;">safety &amp; liveness</td>
@@ -168,6 +174,9 @@
 <div id="ref-azmyMachinecheckedCorrectnessProof2018">
 <p><span class="smallcaps">Azmy, N., Merz, S., and Weidenbach, C.</span> 2018. A machine-checked correctness proof for Pastry. <em>Science of Computer Programming</em> <em>158</em>, 64–80.</p>
 </div>
+<div id="ref-bergerMakingReadsBFT2021">
+<p><span class="smallcaps">Berger, C., Reiser, H.P., and Bessani, A.</span> 2021. Making Reads in BFT State Machine Replication Fast, Linearizable, and Live. <em>arXiv:2107.11144 [cs]</em>.</p>
+</div>
 <div id="ref-buchmanTendermintByzantineFault2016">
 <p><span class="smallcaps">Buchman, E.</span> 2016. Tendermint: Byzantine Fault Tolerance in the Age of Blockchains. <a href="https://atrium.lib.uoguelph.ca/xmlui/handle/10214/9769">https://atrium.lib.uoguelph.ca/xmlui/handle/10214/9769</a>.</p>
 </div>
@@ -176,6 +185,9 @@
 </div>
 <div id="ref-cachinBlockchainConsensusProtocols2017">
 <p><span class="smallcaps">Cachin, C. and Vukolić, M.</span> 2017. Blockchain Consensus Protocols in the Wild. <em>arXiv:1707.01873 [cs]</em>.</p>
+</div>
+<div id="ref-castroPracticalByzantineFault1999">
+<p><span class="smallcaps">Castro, M. and Liskov, B.</span> 1999. Practical byzantine fault tolerance. <em>3rd symposium on operating systems design and implementation (OSDI 99)</em>, USENIX Association.</p>
 </div>
 <div id="ref-chandraPaxosMadeLive2007">
 <p><span class="smallcaps">Chandra, T.D., Griesemer, R., and Redstone, J.</span> 2007. Paxos made live: An engineering perspective. <em>Proceedings of the twenty-sixth annual ACM symposium on Principles of distributed computing - PODC ’07</em>, ACM Press, 398–407.</p>
@@ -280,12 +292,13 @@
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Eventual reachability is Chord’s key correctness property.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Acceptors might accept commands that have not been proposed.<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>As described in Paxos Made Live.<a href="#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>Client reads might fail due to incorrect garbage collection.<a href="#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>The joint consensus membership change algorithm described in the paper version of Raft had a liveness bug, which was fixed in Ongaro’s PhD thesis.<a href="#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>The bug is in the single-server membership change scheme described in Ongaro’s thesis.<a href="#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>With the read-only optimisation.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Eventual reachability is Chord’s key correctness property.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Acceptors might accept commands that have not been proposed.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>As described in Paxos Made Live.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>Client reads might fail due to incorrect garbage collection.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>The joint consensus membership change algorithm described in the paper version of Raft had a liveness bug, which was fixed in Ongaro’s PhD thesis.<a href="#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>The bug is in the single-server membership change scheme described in Ongaro’s thesis.<a href="#fnref7" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
 </body>

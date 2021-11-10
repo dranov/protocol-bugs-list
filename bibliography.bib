@@ -693,3 +693,27 @@ Publisher: IEEE Computer Society},
 	month = jun,
 	year = {2016},
 }
+
+@article{bergerMakingReadsBFT2021,
+	title = {Making {Reads} in {BFT} {State} {Machine} {Replication} {Fast}, {Linearizable}, and {Live}},
+	url = {http://arxiv.org/abs/2107.11144},
+	abstract = {Practical Byzantine Fault Tolerance (PBFT) is a seminal state machine replication protocol that achieves a performance comparable to non-replicated systems in realistic environments. A reason for such high performance is the set of optimizations introduced in the protocol. One of these optimizations is read-only requests, a particular type of client request which avoids running the three-step agreement protocol and allows replicas to respond directly, thus reducing the latency of reads from five to two communication steps. Given PBFT's broad influence, its design and optimizations influenced many BFT protocols and systems that followed, e.g., BFT-SMaRt. We show, for the first time, that the read-only request optimization introduced in PBFT more than 20 years ago can violate its liveness. Notably, the problem affects not only the optimized read-only operations but also standard, totally-ordered operations. We show this weakness by presenting an attack in which a malicious leader blocks correct clients and present two solutions for patching the protocol, making read-only operations fast and correct. The two solutions were implemented on BFT-SMaRt and evaluated in different scenarios, showing their effectiveness in preventing the identified attack.},
+	urldate = {2021-11-10},
+	journal = {arXiv:2107.11144 [cs]},
+	author = {Berger, Christian and Reiser, Hans P. and Bessani, Alysson},
+	month = jul,
+	year = {2021},
+	note = {arXiv: 2107.11144},
+	keywords = {Computer Science - Distributed, Parallel, and Cluster Computing},
+}
+
+@inproceedings {castroPracticalByzantineFault1999,
+	author = {Miguel Castro and Barbara Liskov},
+	title = {Practical Byzantine Fault Tolerance},
+	booktitle = {3rd Symposium on Operating Systems Design and Implementation ({OSDI} 99)},
+	year = {1999},
+	address = {New Orleans, LA},
+	url = {https://www.usenix.org/conference/osdi-99/practical-byzantine-fault-tolerance},
+	publisher = {{USENIX} Association},
+	month = feb,
+}
