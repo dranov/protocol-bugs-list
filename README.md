@@ -62,6 +62,7 @@ The following people suggested additions to the list:
 - [Nibesh Shrestha](https://cs.rit.edu/~nxs4564/)
 - [Benedict Elliott Smith](https://twitter.com/_belliottsmith)
 - [Adi Seredinschi](https://twitter.com/AdiSeredinschi)
+- [Sergey Bronnikov](https://bronevichok.ru/)
 
 ## References
 
