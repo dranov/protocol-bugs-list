@@ -21,10 +21,11 @@
 |      DPaxos       |               \[Nawab et al. 2018\]                |       safety        |            \[Whittaker et al. 2021\]            |
 |   Sync HotStuff   |              \[Abraham et al. 2019\]               |  safety & liveness  |            \[Momose and Cruz 2019\]             |
 |      Gasper       |              \[Buterin et al. 2020\]               |  safety & liveness  |               \[Neu et al. 2021\]               |
+|        STM        |              \[Imbs and Raynal 2010\]              |  safety & liveness  |                 \[Беляев 2010\]                 |
 
 (Reference list starts on the next page.)
 
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 
 <div id="ref-abrahamRevisitingFastPractical2017">
 
@@ -152,6 +153,14 @@ ACM, 178–193.
 <span class="smallcaps">Howard, H. and Abraham, I.</span> 2020. Raft
 does not Guarantee Liveness in the face of Network Faults.
 <https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/>.
+
+</div>
+
+<div id="ref-Imbs2011">
+
+<span class="smallcaps">Imbs, D. and Raynal, M.</span> 2010. Software
+transactional memories: An approach for multicore programming. *The
+journal of supercomputing*.
 
 </div>
 
@@ -376,6 +385,14 @@ to understand chord. *ACM SIGCOMM Computer Communication Review* *42*,
 <span class="smallcaps">Zave, P.</span> 2017. Reasoning About Identifier
 Spaces: How to Make Chord Correct. *IEEE Transactions on Software
 Engineering* *43*, 12, 1144–1156.
+
+</div>
+
+<div id="ref-Belyaev2010">
+
+<span class="smallcaps">Беляев</span>. 2010. Верификация алгоритма
+поддержки транзакционной памяти. *Информатика, телекоммуникации и
+управление. 2010. №3 (101)*.
 
 </div>
 
