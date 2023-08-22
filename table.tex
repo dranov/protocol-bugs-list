@@ -3,6 +3,7 @@
 \usepackage[russian]{babel}
 \usepackage{booktabs}
 \usepackage{footnote}
+\usepackage{xcolor}
 \makesavenoteenv{tabular}
 \usepackage[backend=biber, style=alphabetic, sorting=nyt, urldate=iso]{biblatex}
 \addbibresource{bibliography.bib}
@@ -13,6 +14,11 @@
 \begin{document}
 
 \maketitle
+
+% To make it easier to filter output in table.md
+\begin{center}
+    {\footnotesize \color{white} (begin table)}
+\end{center}
 
 \begin{center}
 \begin{tabular}{ c c c c }
@@ -104,11 +110,10 @@
 \end{tabular}
 \end{center}
 
-\vspace*{\fill}
+% To make it easier to filter output in table.md
 \begin{center}
-(Reference list starts on the next page.)
+    {\footnotesize \color{white} (end table)}
 \end{center}
-\vspace*{\fill}
 
 \newpage
 \printbibliography
