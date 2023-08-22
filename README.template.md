@@ -9,11 +9,7 @@ implementation bugs.
 
 ## Table of errors
 
-!include`snippetEnd="(Reference list starts on the next page.)"` table.md
-
-### Footnotes
-
-!include`snippetStart="[^1]:", includeSnippetDelimiters=True, raw="markdown"` table.md
+!include`snippetStart="(begin table)", snippetEnd="(end table)", raw="markdown"` table.md
 
 ## Acknowledgements
 
@@ -21,4 +17,8 @@ implementation bugs.
 
 ## References
 
-!include`snippetStart="(Reference list starts on the next page.)", snippetEnd="[^1]:"` table.md
+!include`snippetStart="(end table)", snippetEnd="[^1]:"` table.md
+
+## Footnotes
+
+!include`snippetStart="[^1]:", includeSnippetDelimiters=True, raw="markdown"` table.md

@@ -4,6 +4,8 @@ csl: acm-siggraph.csl
 title: Errors found in distributed protocols
 ---
 
+(begin table)
+
 |     Protocol      |                     Reference                      |     Violation      |                 Counter-example                 |
 |:-----------------:|:--------------------------------------------------:|:------------------:|:-----------------------------------------------:|
 |     PBFT[^1]      |             \[Castro and Liskov 1999\]             |      liveness      |             \[Berger et al. 2021\]              |
@@ -28,7 +30,7 @@ title: Errors found in distributed protocols
 |   Sync HotStuff   |              \[Abraham et al. 2019\]               | safety & liveness  |            \[Momose and Cruz 2019\]             |
 |      Gasper       |              \[Buterin et al. 2020\]               | safety & liveness  |               \[Neu et al. 2021\]               |
 
-(Reference list starts on the next page.)
+(end table)
 
 ABRAHAM, I., GUETA, G., MALKHI, D., ALVISI, L., KOTLA, R., AND MARTIN,
 J.-P. 2017. [Revisiting Fast Practical Byzantine Fault

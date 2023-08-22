@@ -1,9 +1,3 @@
----
-bibliography: bibliography.bib
-csl: acm-siggraph.csl
-title: Errors found in distributed protocols
----
-
 # Errors found in distributed protocols
 
 This page collects bugs (errors) discovered in the description of
@@ -15,48 +9,29 @@ listed!** See `CONTRIBUTING.md` for detailed instructions.
 
 ## Table of errors
 
-|     Protocol      |                     Reference                      |      Violation       |                 Counter-example                 |
-|:-----------------:|:--------------------------------------------------:|:--------------------:|:-----------------------------------------------:|
-|    PBFT\[^1\]     |             \[Castro and Liskov 1999\]             |       liveness       |             \[Berger et al. 2021\]              |
-|       Chord       |  \[Stoica et al. 2001; Liben-Nowell et al. 2002\]  |    liveness\[^2\]    |            \[Zave 2012; Zave 2017\]             |
-|      Pastry       |           \[Rowstron and Druschel 2001\]           |        safety        |     \[Azmy et al. 2016; Azmy et al. 2018\]      |
-| Generalised Paxos |                  \[Lamport 2005\]                  | non-triviality\[^3\] |           \[Sutra and Shapiro 2010\]            |
-|     FaB Paxos     | \[Martin and Alvisi 2005; Martin and Alvisi 2006\] |       liveness       |             \[Abraham et al. 2017\]             |
-| Multi-Paxos\[^4\] |              \[Chandra et al. 2007\]               |        safety        |             \[Michael et al. 2017\]             |
-|      Zyzzyva      |      \[Kotla et al. 2007; Kotla et al. 2010\]      |        safety        |             \[Abraham et al. 2017\]             |
-|       CRAQ        |           \[Terrace and Freedman 2009\]            |     safety\[^5\]     |               \[Whittaker 2020\]                |
-|      JPaxos       |              \[Kończak et al. 2011\]               |        safety        |             \[Michael et al. 2017\]             |
-|   VR Revisited    |            \[Liskov and Cowling 2012\]             |        safety        |             \[Michael et al. 2017\]             |
-|      EPaxos       |               \[Moraru et al. 2013\]               |        safety        |                 \[Sutra 2020\]                  |
-|      EPaxos       |               \[Moraru et al. 2013\]               |        safety        |               \[Whittaker 2021\]                |
-|       Raft        |           \[Ongaro and Ousterhout 2014\]           |    liveness\[^6\]    |                  \[Hoch 2014\]                  |
-|       Raft        |                  \[Ongaro 2014\]                   |     safety\[^7\]     |      \[Amos and Zhang 2015; Ongaro 2015\]       |
-|       Raft        |    \[Ongaro and Ousterhout 2014; Ongaro 2014\]     |       liveness       | \[Howard and Abraham 2020; Jensen et al. 2021\] |
-|       hBFT        |                \[Duan et al. 2015\]                |        safety        |            \[Shrestha et al. 2019\]             |
-|    Tendermint     |                  \[Buchman 2016\]                  |       liveness       |           \[Cachin and Vukolić 2017\]           |
-|      CAESAR       |                \[Arun et al. 2017\]                |       liveness       |              \[Enes et al. 2021\]               |
-|      DPaxos       |               \[Nawab et al. 2018\]                |        safety        |            \[Whittaker et al. 2021\]            |
-|   Sync HotStuff   |              \[Abraham et al. 2019\]               |  safety & liveness   |            \[Momose and Cruz 2019\]             |
-|      Gasper       |              \[Buterin et al. 2020\]               |  safety & liveness   |               \[Neu et al. 2021\]               |
-
-### Footnotes
-
-[^1]: With the read-only optimisation.
-
-[^2]: Eventual reachability is Chord’s key correctness property.
-
-[^3]: Acceptors might accept commands that have not been proposed.
-
-[^4]: As described in Paxos Made Live.
-
-[^5]: Client reads might fail due to incorrect garbage collection.
-
-[^6]: The joint consensus membership change algorithm described in the
-    paper version of Raft had a liveness bug, which was fixed in
-    Ongaro’s PhD thesis.
-
-[^7]: The bug is in the single-server membership change scheme described
-    in Ongaro’s thesis.
+|     Protocol      |                     Reference                      |     Violation      |                 Counter-example                 |
+|:-----------------:|:--------------------------------------------------:|:------------------:|:-----------------------------------------------:|
+|     PBFT[^1]      |             \[Castro and Liskov 1999\]             |      liveness      |             \[Berger et al. 2021\]              |
+|       Chord       |  \[Stoica et al. 2001; Liben-Nowell et al. 2002\]  |    liveness[^2]    |            \[Zave 2012; Zave 2017\]             |
+|      Pastry       |           \[Rowstron and Druschel 2001\]           |       safety       |     \[Azmy et al. 2016; Azmy et al. 2018\]      |
+| Generalised Paxos |                  \[Lamport 2005\]                  | non-triviality[^3] |           \[Sutra and Shapiro 2010\]            |
+|     FaB Paxos     | \[Martin and Alvisi 2005; Martin and Alvisi 2006\] |      liveness      |             \[Abraham et al. 2017\]             |
+|  Multi-Paxos[^4]  |              \[Chandra et al. 2007\]               |       safety       |             \[Michael et al. 2017\]             |
+|      Zyzzyva      |      \[Kotla et al. 2007; Kotla et al. 2010\]      |       safety       |             \[Abraham et al. 2017\]             |
+|       CRAQ        |           \[Terrace and Freedman 2009\]            |     safety[^5]     |               \[Whittaker 2020\]                |
+|      JPaxos       |              \[Kończak et al. 2011\]               |       safety       |             \[Michael et al. 2017\]             |
+|   VR Revisited    |            \[Liskov and Cowling 2012\]             |       safety       |             \[Michael et al. 2017\]             |
+|      EPaxos       |               \[Moraru et al. 2013\]               |       safety       |                 \[Sutra 2020\]                  |
+|      EPaxos       |               \[Moraru et al. 2013\]               |       safety       |               \[Whittaker 2021\]                |
+|       Raft        |           \[Ongaro and Ousterhout 2014\]           |    liveness[^6]    |                  \[Hoch 2014\]                  |
+|       Raft        |                  \[Ongaro 2014\]                   |     safety[^7]     |      \[Amos and Zhang 2015; Ongaro 2015\]       |
+|       Raft        |    \[Ongaro and Ousterhout 2014; Ongaro 2014\]     |      liveness      | \[Howard and Abraham 2020; Jensen et al. 2021\] |
+|       hBFT        |                \[Duan et al. 2015\]                |       safety       |            \[Shrestha et al. 2019\]             |
+|    Tendermint     |                  \[Buchman 2016\]                  |      liveness      |           \[Cachin and Vukolić 2017\]           |
+|      CAESAR       |                \[Arun et al. 2017\]                |      liveness      |              \[Enes et al. 2021\]               |
+|      DPaxos       |               \[Nawab et al. 2018\]                |       safety       |            \[Whittaker et al. 2021\]            |
+|   Sync HotStuff   |              \[Abraham et al. 2019\]               | safety & liveness  |            \[Momose and Cruz 2019\]             |
+|      Gasper       |              \[Buterin et al. 2020\]               | safety & liveness  |               \[Neu et al. 2021\]               |
 
 ## Acknowledgements
 
@@ -255,3 +230,22 @@ Communication Review* *42*, 2, 49–57.
 ZAVE, P. 2017. [Reasoning About Identifier Spaces: How to Make Chord
 Correct](https://doi.org/10.1109/TSE.2017.2655056). *IEEE Transactions
 on Software Engineering* *43*, 12, 1144–1156.
+
+## Footnotes
+
+[^1]: With the read-only optimisation.
+
+[^2]: Eventual reachability is Chord’s key correctness property.
+
+[^3]: Acceptors might accept commands that have not been proposed.
+
+[^4]: As described in Paxos Made Live.
+
+[^5]: Client reads might fail due to incorrect garbage collection.
+
+[^6]: The joint consensus membership change algorithm described in the
+    paper version of Raft had a liveness bug, which was fixed in
+    Ongaro’s PhD thesis.
+
+[^7]: The bug is in the single-server membership change scheme described
+    in Ongaro’s thesis.
