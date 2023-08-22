@@ -5,17 +5,196 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Errors found in distributed protocols</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height; auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">Errors found in distributed protocols</h1>
 </header>
+<div class="center">
 <table>
 <thead>
 <tr class="header">
@@ -27,279 +206,599 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">PBFT<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></td>
-<td style="text-align: center;"><span class="citation" data-cites="castroPracticalByzantineFault1999">[Castro and Liskov 1999]</span></td>
+<td style="text-align: center;">PBFT<a href="#fn1" class="footnote-ref"
+id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="castroPracticalByzantineFault1999">[Castro and Liskov
+1999]</span></td>
 <td style="text-align: center;">liveness</td>
-<td style="text-align: center;"><span class="citation" data-cites="bergerMakingReadsBFT2021">[Berger et al. 2021]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="bergerMakingReadsBFT2021">[Berger et al. 2021]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Chord</td>
-<td style="text-align: center;"><span class="citation" data-cites="stoicaChordScalablePeertopeer2001 liben-nowellAnalysisEvolutionPeertopeer2002">[Stoica et al. 2001; Liben-Nowell et al. 2002]</span></td>
-<td style="text-align: center;">liveness<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></td>
-<td style="text-align: center;"><span class="citation" data-cites="zaveUsingLightweightModeling2012 zaveReasoningIdentifierSpaces2017">[Zave 2012; Zave 2017]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="stoicaChordScalablePeertopeer2001 liben-nowellAnalysisEvolutionPeertopeer2002">[Stoica
+et al. 2001; Liben-Nowell et al. 2002]</span></td>
+<td style="text-align: center;">liveness<a href="#fn2"
+class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="zaveUsingLightweightModeling2012 zaveReasoningIdentifierSpaces2017">[Zave
+2012; Zave 2017]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Pastry</td>
-<td style="text-align: center;"><span class="citation" data-cites="rowstronPastryScalableDecentralized2001">[Rowstron and Druschel 2001]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="rowstronPastryScalableDecentralized2001">[Rowstron and
+Druschel 2001]</span></td>
 <td style="text-align: center;">safety</td>
-<td style="text-align: center;"><span class="citation" data-cites="azmyRigorousCorrectnessProof2016 azmyMachinecheckedCorrectnessProof2018">[Azmy et al. 2016; Azmy et al. 2018]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="azmyRigorousCorrectnessProof2016 azmyMachinecheckedCorrectnessProof2018">[Azmy
+et al. 2016; Azmy et al. 2018]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Generalised Paxos</td>
-<td style="text-align: center;"><span class="citation" data-cites="lamportGeneralizedConsensusPaxos2005">[Lamport 2005]</span></td>
-<td style="text-align: center;">non-triviality<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></td>
-<td style="text-align: center;"><span class="citation" data-cites="sutraFastGenuineGeneralized2010">[Sutra and Shapiro 2010]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="lamportGeneralizedConsensusPaxos2005">[Lamport
+2005]</span></td>
+<td style="text-align: center;">non-triviality<a href="#fn3"
+class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="sutraFastGenuineGeneralized2010">[Sutra and Shapiro
+2010]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">FaB Paxos</td>
-<td style="text-align: center;"><span class="citation" data-cites="martinFastByzantineConsensus2005 martinFastByzantineConsensus2006">[Martin and Alvisi 2005; Martin and Alvisi 2006]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="martinFastByzantineConsensus2005 martinFastByzantineConsensus2006">[Martin
+and Alvisi 2005; Martin and Alvisi 2006]</span></td>
 <td style="text-align: center;">liveness</td>
-<td style="text-align: center;"><span class="citation" data-cites="abrahamRevisitingFastPractical2017">[Abraham et al. 2017]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="abrahamRevisitingFastPractical2017">[Abraham et al.
+2017]</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">Multi-Paxos<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></td>
-<td style="text-align: center;"><span class="citation" data-cites="chandraPaxosMadeLive2007">[Chandra et al. 2007]</span></td>
+<td style="text-align: center;">Multi-Paxos<a href="#fn4"
+class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="chandraPaxosMadeLive2007">[Chandra et al. 2007]</span></td>
 <td style="text-align: center;">safety</td>
-<td style="text-align: center;"><span class="citation" data-cites="michaelRecoveringSharedObjects2017">[Michael et al. 2017]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="michaelRecoveringSharedObjects2017">[Michael et al.
+2017]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Zyzzyva</td>
-<td style="text-align: center;"><span class="citation" data-cites="kotlaZyzzyvaSpeculativeByzantine2007 kotlaZyzzyvaSpeculativeByzantine2009">[Kotla et al. 2007; Kotla et al. 2010]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="kotlaZyzzyvaSpeculativeByzantine2007 kotlaZyzzyvaSpeculativeByzantine2009">[Kotla
+et al. 2007; Kotla et al. 2010]</span></td>
 <td style="text-align: center;">safety</td>
-<td style="text-align: center;"><span class="citation" data-cites="abrahamRevisitingFastPractical2017">[Abraham et al. 2017]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="abrahamRevisitingFastPractical2017">[Abraham et al.
+2017]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">CRAQ</td>
-<td style="text-align: center;"><span class="citation" data-cites="terraceObjectStorageCRAQ2009">[Terrace and Freedman 2009]</span></td>
-<td style="text-align: center;">safety<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></td>
-<td style="text-align: center;"><span class="citation" data-cites="whittakerCRAQBug2020">[Whittaker 2020]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="terraceObjectStorageCRAQ2009">[Terrace and Freedman
+2009]</span></td>
+<td style="text-align: center;">safety<a href="#fn5"
+class="footnote-ref" id="fnref5"
+role="doc-noteref"><sup>5</sup></a></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="whittakerCRAQBug2020">[Whittaker 2020]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">JPaxos</td>
-<td style="text-align: center;"><span class="citation" data-cites="konczakJPaxosStateMachine2011">[Kończak et al. 2011]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="konczakJPaxosStateMachine2011">[Kończak et al.
+2011]</span></td>
 <td style="text-align: center;">safety</td>
-<td style="text-align: center;"><span class="citation" data-cites="michaelRecoveringSharedObjects2017">[Michael et al. 2017]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="michaelRecoveringSharedObjects2017">[Michael et al.
+2017]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">VR Revisited</td>
-<td style="text-align: center;"><span class="citation" data-cites="liskovViewstampedReplicationRevisited2012">[Liskov and Cowling 2012]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="liskovViewstampedReplicationRevisited2012">[Liskov and
+Cowling 2012]</span></td>
 <td style="text-align: center;">safety</td>
-<td style="text-align: center;"><span class="citation" data-cites="michaelRecoveringSharedObjects2017">[Michael et al. 2017]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="michaelRecoveringSharedObjects2017">[Michael et al.
+2017]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">EPaxos</td>
-<td style="text-align: center;"><span class="citation" data-cites="moraruThereMoreConsensus2013">[Moraru et al. 2013]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="moraruThereMoreConsensus2013">[Moraru et al.
+2013]</span></td>
 <td style="text-align: center;">safety</td>
-<td style="text-align: center;"><span class="citation" data-cites="sutraCorrectnessEgalitarianPaxos2020">[Sutra 2020]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="sutraCorrectnessEgalitarianPaxos2020">[Sutra
+2020]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">EPaxos</td>
-<td style="text-align: center;"><span class="citation" data-cites="moraruThereMoreConsensus2013">[Moraru et al. 2013]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="moraruThereMoreConsensus2013">[Moraru et al.
+2013]</span></td>
 <td style="text-align: center;">safety</td>
-<td style="text-align: center;"><span class="citation" data-cites="whittakerEPaxosDependencySet2021">[Whittaker 2021]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="whittakerEPaxosDependencySet2021">[Whittaker
+2021]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Raft</td>
-<td style="text-align: center;"><span class="citation" data-cites="ongaroSearchUnderstandableConsensus2014">[Ongaro and Ousterhout 2014]</span></td>
-<td style="text-align: center;">liveness<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></td>
-<td style="text-align: center;"><span class="citation" data-cites="hochConfigurationChanges2014">[Hoch 2014]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="ongaroSearchUnderstandableConsensus2014">[Ongaro and
+Ousterhout 2014]</span></td>
+<td style="text-align: center;">liveness<a href="#fn6"
+class="footnote-ref" id="fnref6"
+role="doc-noteref"><sup>6</sup></a></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="hochConfigurationChanges2014">[Hoch 2014]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Raft</td>
-<td style="text-align: center;"><span class="citation" data-cites="ongaroConsensusBridgingTheory2014">[Ongaro 2014]</span></td>
-<td style="text-align: center;">safety<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></td>
-<td style="text-align: center;"><span class="citation" data-cites="amos15812TermPaper2015 ongaroBugSingleserverMembership2015">[Amos and Zhang 2015; Ongaro 2015]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="ongaroConsensusBridgingTheory2014">[Ongaro 2014]</span></td>
+<td style="text-align: center;">safety<a href="#fn7"
+class="footnote-ref" id="fnref7"
+role="doc-noteref"><sup>7</sup></a></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="amos15812TermPaper2015 ongaroBugSingleserverMembership2015">[Amos
+and Zhang 2015; Ongaro 2015]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Raft</td>
-<td style="text-align: center;"><span class="citation" data-cites="ongaroSearchUnderstandableConsensus2014 ongaroConsensusBridgingTheory2014">[Ongaro and Ousterhout 2014; Ongaro 2014]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="ongaroSearchUnderstandableConsensus2014 ongaroConsensusBridgingTheory2014">[Ongaro
+and Ousterhout 2014; Ongaro 2014]</span></td>
 <td style="text-align: center;">liveness</td>
-<td style="text-align: center;"><span class="citation" data-cites="howardRaftDoesNot2020 jensenExaminingRaftBehaviour2021">[Howard and Abraham 2020; Jensen et al. 2021]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="howardRaftDoesNot2020 jensenExaminingRaftBehaviour2021">[Howard
+and Abraham 2020; Jensen et al. 2021]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">hBFT</td>
-<td style="text-align: center;"><span class="citation" data-cites="duanHBFTSpeculativeByzantine2015">[Duan et al. 2015]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="duanHBFTSpeculativeByzantine2015">[Duan et al.
+2015]</span></td>
 <td style="text-align: center;">safety</td>
-<td style="text-align: center;"><span class="citation" data-cites="shresthaRevisitingHBFTSpeculative2019">[Shrestha et al. 2019]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="shresthaRevisitingHBFTSpeculative2019">[Shrestha et al.
+2019]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Tendermint</td>
-<td style="text-align: center;"><span class="citation" data-cites="buchmanTendermintByzantineFault2016">[Buchman 2016]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="buchmanTendermintByzantineFault2016">[Buchman
+2016]</span></td>
 <td style="text-align: center;">liveness</td>
-<td style="text-align: center;"><span class="citation" data-cites="cachinBlockchainConsensusProtocols2017">[Cachin and Vukolić 2017]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="cachinBlockchainConsensusProtocols2017">[Cachin and Vukolić
+2017]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">CAESAR</td>
-<td style="text-align: center;"><span class="citation" data-cites="arunSpeedingConsensusChasing2017">[Arun et al. 2017]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="arunSpeedingConsensusChasing2017">[Arun et al.
+2017]</span></td>
 <td style="text-align: center;">liveness</td>
-<td style="text-align: center;"><span class="citation" data-cites="enesEfficientReplicationTimestamp2021">[Enes et al. 2021]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="enesEfficientReplicationTimestamp2021">[Enes et al.
+2021]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">DPaxos</td>
-<td style="text-align: center;"><span class="citation" data-cites="nawabDPaxosManagingData2018">[Nawab et al. 2018]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="nawabDPaxosManagingData2018">[Nawab et al. 2018]</span></td>
 <td style="text-align: center;">safety</td>
-<td style="text-align: center;"><span class="citation" data-cites="whittakerMatchmakerPaxosReconfigurable2021">[Whittaker et al. 2021]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="whittakerMatchmakerPaxosReconfigurable2021">[Whittaker et
+al. 2021]</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Sync HotStuff</td>
-<td style="text-align: center;"><span class="citation" data-cites="abrahamSyncHotStuffSimple2019">[Abraham et al. 2019]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="abrahamSyncHotStuffSimple2019">[Abraham et al.
+2019]</span></td>
 <td style="text-align: center;">safety &amp; liveness</td>
-<td style="text-align: center;"><span class="citation" data-cites="momoseForceLockingAttackSync2019">[Momose and Cruz 2019]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="momoseForceLockingAttackSync2019">[Momose and Cruz
+2019]</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Gasper</td>
-<td style="text-align: center;"><span class="citation" data-cites="buterinCombiningGHOSTCasper2020">[Buterin et al. 2020]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="buterinCombiningGHOSTCasper2020">[Buterin et al.
+2020]</span></td>
 <td style="text-align: center;">safety &amp; liveness</td>
-<td style="text-align: center;"><span class="citation" data-cites="neuEbbandFlowProtocolsResolution2021">[Neu et al. 2021]</span></td>
+<td style="text-align: center;"><span class="citation"
+data-cites="neuEbbandFlowProtocolsResolution2021">[Neu et al.
+2021]</span></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="center">
 <p>(Reference list starts on the next page.)</p>
-<div id="refs" class="references">
-<div id="ref-abrahamRevisitingFastPractical2017">
-<p><span class="smallcaps">Abraham, I., Gueta, G., Malkhi, D., Alvisi, L., Kotla, R., and Martin, J.-P.</span> 2017. Revisiting Fast Practical Byzantine Fault Tolerance. <em>arXiv:1712.01367 [cs]</em>.</p>
 </div>
-<div id="ref-abrahamSyncHotStuffSimple2019">
-<p><span class="smallcaps">Abraham, I., Malkhi, D., Nayak, K., Ren, L., and Yin, M.</span> 2019. <em>Sync HotStuff: Simple and Practical Synchronous State Machine Replication</em>..</p>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="list">
+<div id="ref-abrahamRevisitingFastPractical2017" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Abraham, I., Gueta, G., Malkhi, D., Alvisi, L.,
+Kotla, R., and Martin, J.-P.</span> 2017. <a
+href="http://arxiv.org/abs/1712.01367">Revisiting <span>Fast</span>
+<span>Practical</span> <span>Byzantine</span> <span>Fault</span>
+<span>Tolerance</span></a>. <em>arXiv:1712.01367 [cs]</em>.
 </div>
-<div id="ref-amos15812TermPaper2015">
-<p><span class="smallcaps">Amos, B. and Zhang, H.</span> 2015. <em>15-812 Term Paper: Specifying and proving cluster membership for the Raft distributed consensus algorithm</em>..</p>
+<div id="ref-abrahamSyncHotStuffSimple2019" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Abraham, I., Malkhi, D., Nayak, K., Ren, L., and
+Yin, M.</span> 2019. <em><a href="http://eprint.iacr.org/2019/270">Sync
+<span>HotStuff</span>: <span>Simple</span> and <span>Practical</span>
+<span>Synchronous</span> <span>State</span> <span>Machine</span>
+<span>Replication</span></a></em>.
 </div>
-<div id="ref-arunSpeedingConsensusChasing2017">
-<p><span class="smallcaps">Arun, B., Peluso, S., Palmieri, R., Losa, G., and Ravindran, B.</span> 2017. Speeding up Consensus by Chasing Fast Decisions. <em>2017 47th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN)</em>, 49–60.</p>
+<div id="ref-amos15812TermPaper2015" class="csl-entry" role="listitem">
+<span class="smallcaps">Amos, B. and Zhang, H.</span> 2015. <em><a
+href="https://www.cs.cmu.edu/~aplatzer/course/pls15/projects/bamos.pdf">15-812
+<span>Term</span> <span>Paper</span>: <span>Specifying</span> and
+proving cluster membership for the <span>Raft</span> distributed
+consensus algorithm</a></em>.
 </div>
-<div id="ref-azmyRigorousCorrectnessProof2016">
-<p><span class="smallcaps">Azmy, N., Merz, S., and Weidenbach, C.</span> 2016. A Rigorous Correctness Proof for Pastry. In: M. Butler, K.-D. Schewe, A. Mashkoor and M. Biro, eds., <em>Abstract State Machines, Alloy, B, TLA, VDM, and Z</em>. Springer International Publishing, Cham, 86–101.</p>
+<div id="ref-arunSpeedingConsensusChasing2017" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Arun, B., Peluso, S., Palmieri, R., Losa, G.,
+and Ravindran, B.</span> 2017. <a
+href="https://doi.org/10.1109/DSN.2017.35">Speeding up
+<span>Consensus</span> by <span>Chasing</span> <span>Fast</span>
+<span>Decisions</span></a>. <em>2017 47th <span>Annual</span>
+<span>IEEE</span>/<span>IFIP</span> <span>International</span>
+<span>Conference</span> on <span>Dependable</span> <span>Systems</span>
+and <span>Networks</span> (<span>DSN</span>)</em>, 49–60.
 </div>
-<div id="ref-azmyMachinecheckedCorrectnessProof2018">
-<p><span class="smallcaps">Azmy, N., Merz, S., and Weidenbach, C.</span> 2018. A machine-checked correctness proof for Pastry. <em>Science of Computer Programming</em> <em>158</em>, 64–80.</p>
+<div id="ref-azmyRigorousCorrectnessProof2016" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Azmy, N., Merz, S., and Weidenbach, C.</span>
+2016. <a href="https://doi.org/10.1007/978-3-319-33600-8_5">A
+<span>Rigorous</span> <span>Correctness</span> <span>Proof</span> for
+<span>Pastry</span></a>. In: M. Butler, K.-D. Schewe, A. Mashkoor and M.
+Biro, eds., <em>Abstract <span>State</span> <span>Machines</span>,
+<span>Alloy</span>, <span>B</span>, <span>TLA</span>, <span>VDM</span>,
+and <span>Z</span></em>. Springer International Publishing, Cham,
+86–101.
 </div>
-<div id="ref-bergerMakingReadsBFT2021">
-<p><span class="smallcaps">Berger, C., Reiser, H.P., and Bessani, A.</span> 2021. Making Reads in BFT State Machine Replication Fast, Linearizable, and Live. <em>arXiv:2107.11144 [cs]</em>.</p>
+<div id="ref-azmyMachinecheckedCorrectnessProof2018" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Azmy, N., Merz, S., and Weidenbach, C.</span>
+2018. <a href="https://doi.org/10.1016/j.scico.2017.08.003">A
+machine-checked correctness proof for <span>Pastry</span></a>.
+<em>Science of Computer Programming</em> <em>158</em>, 64–80.
 </div>
-<div id="ref-buchmanTendermintByzantineFault2016">
-<p><span class="smallcaps">Buchman, E.</span> 2016. Tendermint: Byzantine Fault Tolerance in the Age of Blockchains. <a href="https://atrium.lib.uoguelph.ca/xmlui/handle/10214/9769">https://atrium.lib.uoguelph.ca/xmlui/handle/10214/9769</a>.</p>
+<div id="ref-bergerMakingReadsBFT2021" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Berger, C., Reiser, H.P., and Bessani, A.</span>
+2021. <a href="http://arxiv.org/abs/2107.11144">Making
+<span>Reads</span> in <span>BFT</span> <span>State</span>
+<span>Machine</span> <span>Replication</span> <span>Fast</span>,
+<span>Linearizable</span>, and <span>Live</span></a>.
+<em>arXiv:2107.11144 [cs]</em>.
 </div>
-<div id="ref-buterinCombiningGHOSTCasper2020">
-<p><span class="smallcaps">Buterin, V., Hernandez, D., Kamphefner, T., et al.</span> 2020. Combining GHOST and Casper. <em>arXiv:2003.03052 [cs]</em>.</p>
+<div id="ref-buchmanTendermintByzantineFault2016" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Buchman, E.</span> 2016. Tendermint:
+<span>Byzantine</span> <span>Fault</span> <span>Tolerance</span> in the
+<span>Age</span> of <span>Blockchains</span>. <a
+href="https://atrium.lib.uoguelph.ca/xmlui/handle/10214/9769">https://atrium.lib.uoguelph.ca/xmlui/handle/10214/9769</a>.
 </div>
-<div id="ref-cachinBlockchainConsensusProtocols2017">
-<p><span class="smallcaps">Cachin, C. and Vukolić, M.</span> 2017. Blockchain Consensus Protocols in the Wild. <em>arXiv:1707.01873 [cs]</em>.</p>
+<div id="ref-buterinCombiningGHOSTCasper2020" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Buterin, V., Hernandez, D., Kamphefner, T., et
+al.</span> 2020. <a href="http://arxiv.org/abs/2003.03052">Combining
+<span>GHOST</span> and <span>Casper</span></a>. <em>arXiv:2003.03052
+[cs]</em>.
 </div>
-<div id="ref-castroPracticalByzantineFault1999">
-<p><span class="smallcaps">Castro, M. and Liskov, B.</span> 1999. Practical byzantine fault tolerance. <em>3rd symposium on operating systems design and implementation (OSDI 99)</em>, USENIX Association.</p>
+<div id="ref-cachinBlockchainConsensusProtocols2017" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Cachin, C. and Vukolić, M.</span> 2017. <a
+href="http://arxiv.org/abs/1707.01873">Blockchain <span>Consensus</span>
+<span>Protocols</span> in the <span>Wild</span></a>.
+<em>arXiv:1707.01873 [cs]</em>.
 </div>
-<div id="ref-chandraPaxosMadeLive2007">
-<p><span class="smallcaps">Chandra, T.D., Griesemer, R., and Redstone, J.</span> 2007. Paxos made live: An engineering perspective. <em>Proceedings of the twenty-sixth annual ACM symposium on Principles of distributed computing - PODC ’07</em>, ACM Press, 398–407.</p>
+<div id="ref-castroPracticalByzantineFault1999" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Castro, M. and Liskov, B.</span> 1999. <a
+href="https://www.usenix.org/conference/osdi-99/practical-byzantine-fault-tolerance">Practical
+byzantine fault tolerance</a>. <em>3rd symposium on operating systems
+design and implementation (<span>OSDI</span> 99)</em>,
+<span>USENIX</span> Association.
 </div>
-<div id="ref-duanHBFTSpeculativeByzantine2015">
-<p><span class="smallcaps">Duan, S., Peisert, S., and Levitt, K.N.</span> 2015. hBFT: Speculative Byzantine Fault Tolerance with Minimum Cost. <em>IEEE Transactions on Dependable and Secure Computing</em> <em>12</em>, 1, 58–70.</p>
+<div id="ref-chandraPaxosMadeLive2007" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Chandra, T.D., Griesemer, R., and Redstone,
+J.</span> 2007. <a href="https://doi.org/10.1145/1281100.1281103">Paxos
+made live: An engineering perspective</a>. <em>Proceedings of the
+twenty-sixth annual <span>ACM</span> symposium on
+<span>Principles</span> of distributed computing - <span>PODC</span>
+’07</em>, ACM Press, 398–407.
 </div>
-<div id="ref-enesEfficientReplicationTimestamp2021">
-<p><span class="smallcaps">Enes, V., Baquero, C., Gotsman, A., and Sutra, P.</span> 2021. Efficient replication via timestamp stability. <em>Proceedings of the Sixteenth European Conference on Computer Systems</em>, ACM, 178–193.</p>
+<div id="ref-duanHBFTSpeculativeByzantine2015" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Duan, S., Peisert, S., and Levitt, K.N.</span>
+2015. <a href="https://doi.org/10.1109/TDSC.2014.2312331"><span
+class="nocase">hBFT</span>: <span>Speculative</span>
+<span>Byzantine</span> <span>Fault</span> <span>Tolerance</span> with
+<span>Minimum</span> <span>Cost</span></a>. <em>IEEE Transactions on
+Dependable and Secure Computing</em> <em>12</em>, 1, 58–70.
 </div>
-<div id="ref-hochConfigurationChanges2014">
-<p><span class="smallcaps">Hoch, E.</span> 2014. Configuration changes. <a href="https://groups.google.com/g/raft-dev/c/xux5HRxH3Ic/m/mz_PDK-qMJgJ">https://groups.google.com/g/raft-dev/c/xux5HRxH3Ic/m/mz_PDK-qMJgJ</a>.</p>
+<div id="ref-enesEfficientReplicationTimestamp2021" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Enes, V., Baquero, C., Gotsman, A., and Sutra,
+P.</span> 2021. <a
+href="https://doi.org/10.1145/3447786.3456236">Efficient replication via
+timestamp stability</a>. <em>Proceedings of the <span>Sixteenth</span>
+<span>European</span> <span>Conference</span> on <span>Computer</span>
+<span>Systems</span></em>, ACM, 178–193.
 </div>
-<div id="ref-howardRaftDoesNot2020">
-<p><span class="smallcaps">Howard, H. and Abraham, I.</span> 2020. Raft does not Guarantee Liveness in the face of Network Faults. <a href="https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/">https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/</a>.</p>
+<div id="ref-hochConfigurationChanges2014" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Hoch, E.</span> 2014. Configuration changes. <a
+href="https://groups.google.com/g/raft-dev/c/xux5HRxH3Ic/m/mz_PDK-qMJgJ">https://groups.google.com/g/raft-dev/c/xux5HRxH3Ic/m/mz_PDK-qMJgJ</a>.
 </div>
-<div id="ref-jensenExaminingRaftBehaviour2021">
-<p><span class="smallcaps">Jensen, C., Howard, H., and Mortier, R.</span> 2021. Examining Raft’s behaviour during partial network failures. <em>Proceedings of the 1st Workshop on High Availability and Observability of Cloud Systems</em>, Association for Computing Machinery, 11–17.</p>
+<div id="ref-howardRaftDoesNot2020" class="csl-entry" role="listitem">
+<span class="smallcaps">Howard, H. and Abraham, I.</span> 2020. Raft
+does not <span>Guarantee</span> <span>Liveness</span> in the face of
+<span>Network</span> <span>Faults</span>. <a
+href="https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/">https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/</a>.
 </div>
-<div id="ref-konczakJPaxosStateMachine2011">
-<p><span class="smallcaps">Kończak, J., Sousa Santos, N.F. de, Żurkowski, T., Wojciechowski, P.T., and Schiper, A.</span> 2011. <em>JPaxos: State machine replication based on the Paxos protocol</em>..</p>
+<div id="ref-jensenExaminingRaftBehaviour2021" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Jensen, C., Howard, H., and Mortier, R.</span>
+2021. <a href="https://doi.org/10.1145/3447851.3458739">Examining
+<span>Raft</span>’s behaviour during partial network failures</a>.
+<em>Proceedings of the 1st <span>Workshop</span> on <span>High</span>
+<span>Availability</span> and <span>Observability</span> of
+<span>Cloud</span> <span>Systems</span></em>, Association for Computing
+Machinery, 11–17.
 </div>
-<div id="ref-kotlaZyzzyvaSpeculativeByzantine2007">
-<p><span class="smallcaps">Kotla, R., Alvisi, L., Dahlin, M., Clement, A., and Wong, E.</span> 2007. Zyzzyva: Speculative byzantine fault tolerance. <em>SIGOPS Oper. Syst. Rev.</em> <em>41</em>, 6, 45–58.</p>
+<div id="ref-konczakJPaxosStateMachine2011" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Kończak, J., Sousa Santos, N.F. de, Żurkowski,
+T., Wojciechowski, P.T., and Schiper, A.</span> 2011.
+<em><span>JPaxos</span>: <span>State</span> machine replication based on
+the <span>Paxos</span> protocol</em>.
 </div>
-<div id="ref-kotlaZyzzyvaSpeculativeByzantine2009">
-<p><span class="smallcaps">Kotla, R., Alvisi, L., Dahlin, M., Clement, A., and Wong, E.</span> 2010. Zyzzyva: Speculative byzantine fault tolerance. <em>ACM Trans. Comput. Syst.</em> <em>27</em>, 4.</p>
+<div id="ref-kotlaZyzzyvaSpeculativeByzantine2007" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Kotla, R., Alvisi, L., Dahlin, M., Clement, A.,
+and Wong, E.</span> 2007. <a
+href="https://doi.org/10.1145/1323293.1294267">Zyzzyva: Speculative
+byzantine fault tolerance</a>. <em>SIGOPS Oper. Syst. Rev.</em>
+<em>41</em>, 6, 45–58.
 </div>
-<div id="ref-lamportGeneralizedConsensusPaxos2005">
-<p><span class="smallcaps">Lamport, L.</span> 2005. <em>Generalized Consensus and Paxos</em>. Microsoft Research.</p>
+<div id="ref-kotlaZyzzyvaSpeculativeByzantine2009" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Kotla, R., Alvisi, L., Dahlin, M., Clement, A.,
+and Wong, E.</span> 2010. <a
+href="https://doi.org/10.1145/1658357.1658358">Zyzzyva: Speculative
+byzantine fault tolerance</a>. <em>ACM Trans. Comput. Syst.</em>
+<em>27</em>, 4.
 </div>
-<div id="ref-liben-nowellAnalysisEvolutionPeertopeer2002">
-<p><span class="smallcaps">Liben-Nowell, D., Balakrishnan, H., and Karger, D.</span> 2002. Analysis of the evolution of peer-to-peer systems. <em>Proceedings of the twenty-first annual symposium on principles of distributed computing</em>, Association for Computing Machinery, 233–242.</p>
+<div id="ref-lamportGeneralizedConsensusPaxos2005" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Lamport, L.</span> 2005. <em><a
+href="https://www.microsoft.com/en-us/research/publication/generalized-consensus-and-paxos/">Generalized
+<span>Consensus</span> and <span>Paxos</span></a></em>. Microsoft
+Research.
 </div>
-<div id="ref-liskovViewstampedReplicationRevisited2012">
-<p><span class="smallcaps">Liskov, B. and Cowling, J.</span> 2012. <em>Viewstamped Replication Revisited</em>..</p>
+<div id="ref-liben-nowellAnalysisEvolutionPeertopeer2002"
+class="csl-entry" role="listitem">
+<span class="smallcaps">Liben-Nowell, D., Balakrishnan, H., and Karger,
+D.</span> 2002. <a href="https://doi.org/10.1145/571825.571863">Analysis
+of the evolution of peer-to-peer systems</a>. <em>Proceedings of the
+twenty-first annual symposium on principles of distributed
+computing</em>, Association for Computing Machinery, 233–242.
 </div>
-<div id="ref-martinFastByzantineConsensus2005">
-<p><span class="smallcaps">Martin, J.-P. and Alvisi, L.</span> 2005. Fast Byzantine Consensus. <em>2005 International Conference on Dependable Systems and Networks (DSN’05)</em>, 402–411.</p>
+<div id="ref-liskovViewstampedReplicationRevisited2012"
+class="csl-entry" role="listitem">
+<span class="smallcaps">Liskov, B. and Cowling, J.</span> 2012.
+<em>Viewstamped <span>Replication</span> <span>Revisited</span></em>.
 </div>
-<div id="ref-martinFastByzantineConsensus2006">
-<p><span class="smallcaps">Martin, J.-P. and Alvisi, L.</span> 2006. Fast Byzantine Consensus. <em>IEEE Transactions on Dependable and Secure Computing</em> <em>3</em>, 3, 202–215.</p>
+<div id="ref-martinFastByzantineConsensus2005" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Martin, J.-P. and Alvisi, L.</span> 2005. <a
+href="https://doi.org/10.1109/DSN.2005.48">Fast <span>Byzantine</span>
+<span>Consensus</span></a>. <em>2005 <span>International</span>
+<span>Conference</span> on <span>Dependable</span> <span>Systems</span>
+and <span>Networks</span> (<span>DSN</span>’05)</em>, 402–411.
 </div>
-<div id="ref-michaelRecoveringSharedObjects2017">
-<p><span class="smallcaps">Michael, E., Ports, D.R.K., Sharma, N.K., and Szekeres, A.</span> 2017. Recovering Shared Objects Without Stable Storage. 27.</p>
+<div id="ref-martinFastByzantineConsensus2006" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Martin, J.-P. and Alvisi, L.</span> 2006. <a
+href="http://dx.doi.org.libproxy1.nus.edu.sg/10.1109/TDSC.2006.35">Fast
+<span>Byzantine</span> <span>Consensus</span></a>. <em>IEEE Transactions
+on Dependable and Secure Computing</em> <em>3</em>, 3, 202–215.
 </div>
-<div id="ref-momoseForceLockingAttackSync2019">
-<p><span class="smallcaps">Momose, A. and Cruz, J.P.</span> 2019. <em>Force-Locking Attack on Sync Hotstuff</em>..</p>
+<div id="ref-michaelRecoveringSharedObjects2017" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Michael, E., Ports, D.R.K., Sharma, N.K., and
+Szekeres, A.</span> 2017. Recovering <span>Shared</span>
+<span>Objects</span> <span>Without</span> <span>Stable</span>
+<span>Storage</span>. 27.
 </div>
-<div id="ref-moraruThereMoreConsensus2013">
-<p><span class="smallcaps">Moraru, I., Andersen, D.G., and Kaminsky, M.</span> 2013. There is more consensus in Egalitarian parliaments. <em>Proceedings of the Twenty-Fourth ACM Symposium on Operating Systems Principles</em>, Association for Computing Machinery, 358–372.</p>
+<div id="ref-momoseForceLockingAttackSync2019" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Momose, A. and Cruz, J.P.</span> 2019. <em><a
+href="http://eprint.iacr.org/2019/1484">Force-<span>Locking</span>
+<span>Attack</span> on <span>Sync</span> <span>Hotstuff</span></a></em>.
 </div>
-<div id="ref-nawabDPaxosManagingData2018">
-<p><span class="smallcaps">Nawab, F., Agrawal, D., and El Abbadi, A.</span> 2018. DPaxos: Managing Data Closer to Users for Low-Latency and Mobile Applications. <em>Proceedings of the 2018 International Conference on Management of Data</em>, Association for Computing Machinery, 1221–1236.</p>
+<div id="ref-moraruThereMoreConsensus2013" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Moraru, I., Andersen, D.G., and Kaminsky,
+M.</span> 2013. <a href="https://doi.org/10.1145/2517349.2517350">There
+is more consensus in <span>Egalitarian</span> parliaments</a>.
+<em>Proceedings of the <span>Twenty</span>-<span>Fourth</span>
+<span>ACM</span> <span>Symposium</span> on <span>Operating</span>
+<span>Systems</span> <span>Principles</span></em>, Association for
+Computing Machinery, 358–372.
 </div>
-<div id="ref-neuEbbandFlowProtocolsResolution2021">
-<p><span class="smallcaps">Neu, J., Tas, E.N., and Tse, D.</span> 2021. Ebb-and-Flow Protocols: A Resolution of the Availability-Finality Dilemma. <em>arXiv:2009.04987 [cs]</em>.</p>
+<div id="ref-nawabDPaxosManagingData2018" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Nawab, F., Agrawal, D., and El Abbadi, A.</span>
+2018. <a
+href="https://doi.org/10.1145/3183713.3196928"><span>DPaxos</span>:
+<span>Managing</span> <span>Data</span> <span>Closer</span> to
+<span>Users</span> for <span>Low</span>-<span>Latency</span> and
+<span>Mobile</span> <span>Applications</span></a>. <em>Proceedings of
+the 2018 <span>International</span> <span>Conference</span> on
+<span>Management</span> of <span>Data</span></em>, Association for
+Computing Machinery, 1221–1236.
 </div>
-<div id="ref-ongaroConsensusBridgingTheory2014">
-<p><span class="smallcaps">Ongaro, D.</span> 2014. Consensus: Bridging theory and practice..</p>
+<div id="ref-neuEbbandFlowProtocolsResolution2021" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Neu, J., Tas, E.N., and Tse, D.</span> 2021. <a
+href="http://arxiv.org/abs/2009.04987">Ebb-and-<span>Flow</span>
+<span>Protocols</span>: <span>A</span> <span>Resolution</span> of the
+<span>Availability</span>-<span>Finality</span>
+<span>Dilemma</span></a>. <em>arXiv:2009.04987 [cs]</em>.
 </div>
-<div id="ref-ongaroBugSingleserverMembership2015">
-<p><span class="smallcaps">Ongaro, D.</span> 2015. Bug in single-server membership changes. <a href="https://groups.google.com/g/raft-dev/c/t4xj6dJTP6E/m/d2D9LrWRza8J">https://groups.google.com/g/raft-dev/c/t4xj6dJTP6E/m/d2D9LrWRza8J</a>.</p>
+<div id="ref-ongaroConsensusBridgingTheory2014" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Ongaro, D.</span> 2014. Consensus: Bridging
+theory and practice.
 </div>
-<div id="ref-ongaroSearchUnderstandableConsensus2014">
-<p><span class="smallcaps">Ongaro, D. and Ousterhout, J.</span> 2014. In search of an understandable consensus algorithm. <em>Proceedings of the 2014 usenix conference on usenix annual technical conference</em>, USENIX Association, 305–320.</p>
+<div id="ref-ongaroBugSingleserverMembership2015" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Ongaro, D.</span> 2015. Bug in single-server
+membership changes. <a
+href="https://groups.google.com/g/raft-dev/c/t4xj6dJTP6E/m/d2D9LrWRza8J">https://groups.google.com/g/raft-dev/c/t4xj6dJTP6E/m/d2D9LrWRza8J</a>.
 </div>
-<div id="ref-rowstronPastryScalableDecentralized2001">
-<p><span class="smallcaps">Rowstron, A. and Druschel, P.</span> 2001. Pastry: Scalable, Decentralized Object Location, and Routing for Large-Scale Peer-to-Peer Systems. <em>Middleware 2001</em>, Springer, 329–350.</p>
+<div id="ref-ongaroSearchUnderstandableConsensus2014" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Ongaro, D. and Ousterhout, J.</span> 2014. In
+search of an understandable consensus algorithm. <em>Proceedings of the
+2014 USENIX conference on USENIX annual technical conference</em>,
+USENIX Association, 305–320.
 </div>
-<div id="ref-shresthaRevisitingHBFTSpeculative2019">
-<p><span class="smallcaps">Shrestha, N., Kumar, M., and Duan, S.</span> 2019. Revisiting hBFT: Speculative Byzantine Fault Tolerance with Minimum Cost. <em>arXiv:1902.08505 [cs]</em>.</p>
+<div id="ref-rowstronPastryScalableDecentralized2001" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Rowstron, A. and Druschel, P.</span> 2001. <a
+href="https://doi.org/10.1007/3-540-45518-3_18">Pastry:
+<span>Scalable</span>, <span>Decentralized</span> <span>Object</span>
+<span>Location</span>, and <span>Routing</span> for
+<span>Large</span>-<span>Scale</span>
+<span>Peer</span>-to-<span>Peer</span> <span>Systems</span></a>.
+<em>Middleware 2001</em>, Springer, 329–350.
 </div>
-<div id="ref-stoicaChordScalablePeertopeer2001">
-<p><span class="smallcaps">Stoica, I., Morris, R., Karger, D., Kaashoek, M.F., and Balakrishnan, H.</span> 2001. Chord: A scalable peer-to-peer lookup service for internet applications. <em>SIGCOMM Comput. Commun. Rev.</em> <em>31</em>, 4, 149–160.</p>
+<div id="ref-shresthaRevisitingHBFTSpeculative2019" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Shrestha, N., Kumar, M., and Duan, S.</span>
+2019. <a href="http://arxiv.org/abs/1902.08505">Revisiting <span
+class="nocase">hBFT</span>: <span>Speculative</span>
+<span>Byzantine</span> <span>Fault</span> <span>Tolerance</span> with
+<span>Minimum</span> <span>Cost</span></a>. <em>arXiv:1902.08505
+[cs]</em>.
 </div>
-<div id="ref-sutraCorrectnessEgalitarianPaxos2020">
-<p><span class="smallcaps">Sutra, P.</span> 2020. On the correctness of Egalitarian Paxos. <em>Information Processing Letters</em> <em>156</em>.</p>
+<div id="ref-stoicaChordScalablePeertopeer2001" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Stoica, I., Morris, R., Karger, D., Kaashoek,
+M.F., and Balakrishnan, H.</span> 2001. <a
+href="https://doi.org/10.1145/964723.383071">Chord: A scalable
+peer-to-peer lookup service for internet applications</a>. <em>SIGCOMM
+Comput. Commun. Rev.</em> <em>31</em>, 4, 149–160.
 </div>
-<div id="ref-sutraFastGenuineGeneralized2010">
-<p><span class="smallcaps">Sutra, P. and Shapiro, M.</span> 2010. <em>Fast Genuine Generalized Consensus</em>..</p>
+<div id="ref-sutraCorrectnessEgalitarianPaxos2020" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Sutra, P.</span> 2020. <a
+href="https://doi.org/10.1016/j.ipl.2019.105901">On the correctness of
+<span>Egalitarian</span> <span>Paxos</span></a>. <em>Information
+Processing Letters</em> <em>156</em>.
 </div>
-<div id="ref-terraceObjectStorageCRAQ2009">
-<p><span class="smallcaps">Terrace, J. and Freedman, M.J.</span> 2009. Object Storage on {CRAQ}: High-Throughput Chain Replication for Read-Mostly Workloads..</p>
+<div id="ref-sutraFastGenuineGeneralized2010" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Sutra, P. and Shapiro, M.</span> 2010. <em><a
+href="https://drive.google.com/open?id=0BwFkGepvBDQoRjNYRGJTdWQ0SzA">Fast
+<span>Genuine</span> <span>Generalized</span>
+<span>Consensus</span></a></em>.
 </div>
-<div id="ref-whittakerCRAQBug2020">
-<p><span class="smallcaps">Whittaker, M.</span> 2020. CRAQ Bug. <a href="https://github.com/mwhittaker/craq_bug">https://github.com/mwhittaker/craq_bug</a>.</p>
+<div id="ref-terraceObjectStorageCRAQ2009" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Terrace, J. and Freedman, M.J.</span> 2009. <a
+href="https://www.usenix.org/conference/usenix-09/object-storage-craq-high-throughput-chain-replication-read-mostly-workloads">Object
+<span>Storage</span> on {<span>CRAQ</span>}:
+<span>High</span>-<span>Throughput</span> <span>Chain</span>
+<span>Replication</span> for <span>Read</span>-<span>Mostly</span>
+<span>Workloads</span></a>.
 </div>
-<div id="ref-whittakerEPaxosDependencySet2021">
-<p><span class="smallcaps">Whittaker, M.</span> 2021. EPaxos Dependency Set Compaction Bug. <a href="https://github.com/mwhittaker/bipartisan_paxos/blob/cbd99cc735215d18c163dc41cb0a05edcb55437d/epaxos_bugs/epaxos_dependency_bug.pdf">https://github.com/mwhittaker/bipartisan_paxos/blob/cbd99cc735215d18c163dc41cb0a05edcb55437d/epaxos_bugs/epaxos_dependency_bug.pdf</a>.</p>
+<div id="ref-whittakerCRAQBug2020" class="csl-entry" role="listitem">
+<span class="smallcaps">Whittaker, M.</span> 2020. <span>CRAQ</span>
+<span>Bug</span>. <a
+href="https://github.com/mwhittaker/craq_bug">https://github.com/mwhittaker/craq_bug</a>.
 </div>
-<div id="ref-whittakerMatchmakerPaxosReconfigurable2021">
-<p><span class="smallcaps">Whittaker, M., Hellerstein, J.M., Giridharan, N., Szekeres, A., Howard, H., and Nawab, F.</span> 2021. Matchmaker Paxos: A Reconfigurable Consensus Protocol. <em>Journal of Systems Research</em>, 22.</p>
+<div id="ref-whittakerEPaxosDependencySet2021" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Whittaker, M.</span> 2021. <span>EPaxos</span>
+<span>Dependency</span> <span>Set</span> <span>Compaction</span>
+<span>Bug</span>. <a
+href="https://github.com/mwhittaker/bipartisan_paxos/blob/cbd99cc735215d18c163dc41cb0a05edcb55437d/epaxos_bugs/epaxos_dependency_bug.pdf">https://github.com/mwhittaker/bipartisan_paxos/blob/cbd99cc735215d18c163dc41cb0a05edcb55437d/epaxos_bugs/epaxos_dependency_bug.pdf</a>.
 </div>
-<div id="ref-zaveUsingLightweightModeling2012">
-<p><span class="smallcaps">Zave, P.</span> 2012. Using lightweight modeling to understand chord. <em>ACM SIGCOMM Computer Communication Review</em> <em>42</em>, 2, 49–57.</p>
+<div id="ref-whittakerMatchmakerPaxosReconfigurable2021"
+class="csl-entry" role="listitem">
+<span class="smallcaps">Whittaker, M., Hellerstein, J.M., Giridharan,
+N., Szekeres, A., Howard, H., and Nawab, F.</span> 2021. Matchmaker
+<span>Paxos</span>: <span>A</span> <span>Reconfigurable</span>
+<span>Consensus</span> <span>Protocol</span>. <em>Journal of Systems
+Research</em>, 22.
 </div>
-<div id="ref-zaveReasoningIdentifierSpaces2017">
-<p><span class="smallcaps">Zave, P.</span> 2017. Reasoning About Identifier Spaces: How to Make Chord Correct. <em>IEEE Transactions on Software Engineering</em> <em>43</em>, 12, 1144–1156.</p>
+<div id="ref-zaveUsingLightweightModeling2012" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Zave, P.</span> 2012. <a
+href="https://doi.org/10.1145/2185376.2185383">Using lightweight
+modeling to understand chord</a>. <em>ACM SIGCOMM Computer Communication
+Review</em> <em>42</em>, 2, 49–57.
+</div>
+<div id="ref-zaveReasoningIdentifierSpaces2017" class="csl-entry"
+role="listitem">
+<span class="smallcaps">Zave, P.</span> 2017. <a
+href="https://doi.org/10.1109/TSE.2017.2655056">Reasoning
+<span>About</span> <span>Identifier</span> <span>Spaces</span>:
+<span>How</span> to <span>Make</span> <span>Chord</span>
+<span>Correct</span></a>. <em>IEEE Transactions on Software
+Engineering</em> <em>43</em>, 12, 1144–1156.
 </div>
 </div>
-<section class="footnotes">
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>With the read-only optimisation.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Eventual reachability is Chord’s key correctness property.<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>Acceptors might accept commands that have not been proposed.<a href="#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>As described in Paxos Made Live.<a href="#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>Client reads might fail due to incorrect garbage collection.<a href="#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>The joint consensus membership change algorithm described in the paper version of Raft had a liveness bug, which was fixed in Ongaro’s PhD thesis.<a href="#fnref6" class="footnote-back">↩</a></p></li>
-<li id="fn7"><p>The bug is in the single-server membership change scheme described in Ongaro’s thesis.<a href="#fnref7" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>With the read-only optimisation.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Eventual reachability is Chord’s key correctness
+property.<a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Acceptors might accept commands that have not been
+proposed.<a href="#fnref3" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>As described in Paxos Made Live.<a href="#fnref4"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Client reads might fail due to incorrect garbage
+collection.<a href="#fnref5" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>The joint consensus membership change algorithm
+described in the paper version of Raft had a liveness bug, which was
+fixed in Ongaro’s PhD thesis.<a href="#fnref6" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>The bug is in the single-server membership change scheme
+described in Ongaro’s thesis.<a href="#fnref7" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
+</aside>
 </body>
 </html>
