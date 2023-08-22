@@ -32,7 +32,7 @@ listed!** See `CONTRIBUTING.md` for detailed instructions.
 |      DPaxos       |               \[Nawab et al. 2018\]                |       safety       |            \[Whittaker et al. 2021\]            |
 |   Sync HotStuff   |              \[Abraham et al. 2019\]               | safety & liveness  |            \[Momose and Cruz 2019\]             |
 |      Gasper       |              \[Buterin et al. 2020\]               | safety & liveness  |               \[Neu et al. 2021\]               |
-|        STM        |              \[Imbs and Raynal 2010\]              | safety & liveness  |                 \[Беляев 2010\]                 |
+|        STM        |              \[Imbs and Raynal 2010\]              | safety & liveness  |                \[Belyaev 2010\]                 |
 
 ## Acknowledgements
 
@@ -78,6 +78,12 @@ AZMY, N., MERZ, S., AND WEIDENBACH, C. 2018. [A machine-checked
 correctness proof for
 Pastry](https://doi.org/10.1016/j.scico.2017.08.003). *Science of
 Computer Programming* *158*, 64–80.
+
+BELYAEV, A. 2010. [Верификация алгоритма поддержки транзакционной памяти
+\[Verifying an algorithm for transactional memory
+support\]](https://cyberleninka.ru/article/n/verifikatsiya-algoritma-podderzhki-tranzaktsionnoy-pamyati).
+*Информатика, телекоммуникации и управление \[Informatics,
+telecommunications and control\]. 2010. №3 (101)*.
 
 BERGER, C., REISER, H.P., AND BESSANI, A. 2021. [Making Reads in BFT
 State Machine Replication Fast, Linearizable, and
@@ -235,10 +241,6 @@ Communication Review* *42*, 2, 49–57.
 ZAVE, P. 2017. [Reasoning About Identifier Spaces: How to Make Chord
 Correct](https://doi.org/10.1109/TSE.2017.2655056). *IEEE Transactions
 on Software Engineering* *43*, 12, 1144–1156.
-
-БЕЛЯЕВ. 2010. [Верификация алгоритма поддержки транзакционной
-памяти](https://cyberleninka.ru/article/n/verifikatsiya-algoritma-podderzhki-tranzaktsionnoy-pamyati).
-*Информатика, телекоммуникации и управление. 2010. №3 (101)*.
 
 ## Footnotes
 
