@@ -32,6 +32,7 @@ listed!** See `CONTRIBUTING.md` for detailed instructions.
 |      DPaxos       |               \[Nawab et al. 2018\]                |       safety       |            \[Whittaker et al. 2021\]            |
 |   Sync HotStuff   |              \[Abraham et al. 2019\]               | safety & liveness  |            \[Momose and Cruz 2019\]             |
 |      Gasper       |              \[Buterin et al. 2020\]               | safety & liveness  |               \[Neu et al. 2021\]               |
+|        STM        |              \[Imbs and Raynal 2010\]              | safety & liveness  |                \[Belyaev 2010\]                 |
 
 ## Acknowledgements
 
@@ -45,6 +46,7 @@ The following people suggested additions to the list:
 - [Nibesh Shrestha](https://cs.rit.edu/~nxs4564/)
 - [Benedict Elliott Smith](https://twitter.com/_belliottsmith)
 - [Adi Seredinschi](https://twitter.com/AdiSeredinschi)
+- [Sergey Bronnikov](https://bronevichok.ru/)
 
 ## References
 
@@ -76,6 +78,12 @@ AZMY, N., MERZ, S., AND WEIDENBACH, C. 2018. [A machine-checked
 correctness proof for
 Pastry](https://doi.org/10.1016/j.scico.2017.08.003). *Science of
 Computer Programming* *158*, 64–80.
+
+BELYAEV, A. 2010. [Верификация алгоритма поддержки транзакционной памяти
+\[Verifying an algorithm for transactional memory
+support\]](https://cyberleninka.ru/article/n/verifikatsiya-algoritma-podderzhki-tranzaktsionnoy-pamyati).
+*Информатика, телекоммуникации и управление \[Informatics,
+telecommunications and control\]. 2010. №3 (101)*.
 
 BERGER, C., REISER, H.P., AND BESSANI, A. 2021. [Making Reads in BFT
 State Machine Replication Fast, Linearizable, and
@@ -117,6 +125,9 @@ HOCH, E. 2014. Configuration changes.
 HOWARD, H. AND ABRAHAM, I. 2020. Raft does not Guarantee Liveness in the
 face of Network Faults.
 <https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/>.
+
+IMBS, D. AND RAYNAL, M. 2010. Software transactional memories:
+An approach for multicore programming. *The journal of supercomputing*.
 
 JENSEN, C., HOWARD, H., AND MORTIER, R. 2021. [Examining Raft’s
 behaviour during partial network
