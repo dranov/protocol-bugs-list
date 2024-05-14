@@ -9,30 +9,31 @@ listed!** See `CONTRIBUTING.md` for detailed instructions.
 
 ## Table of errors
 
-|     Protocol      |                     Reference                      |     Violation      |                 Counter-example                 |
-|:-----------------:|:--------------------------------------------------:|:------------------:|:-----------------------------------------------:|
-|     PBFT[^1]      |             \[Castro and Liskov 1999\]             |      liveness      |             \[Berger et al. 2021\]              |
-|       Chord       |  \[Stoica et al. 2001; Liben-Nowell et al. 2002\]  |    liveness[^2]    |            \[Zave 2012; Zave 2017\]             |
-|      Pastry       |           \[Rowstron and Druschel 2001\]           |       safety       |     \[Azmy et al. 2016; Azmy et al. 2018\]      |
-| Generalised Paxos |                  \[Lamport 2005\]                  | non-triviality[^3] |           \[Sutra and Shapiro 2010\]            |
-|     FaB Paxos     | \[Martin and Alvisi 2005; Martin and Alvisi 2006\] |      liveness      |             \[Abraham et al. 2017\]             |
-|  Multi-Paxos[^4]  |              \[Chandra et al. 2007\]               |       safety       |             \[Michael et al. 2017\]             |
-|      Zyzzyva      |      \[Kotla et al. 2007; Kotla et al. 2010\]      |       safety       |             \[Abraham et al. 2017\]             |
-|       CRAQ        |           \[Terrace and Freedman 2009\]            |     safety[^5]     |               \[Whittaker 2020\]                |
-|      JPaxos       |              \[Kończak et al. 2011\]               |       safety       |             \[Michael et al. 2017\]             |
-|   VR Revisited    |            \[Liskov and Cowling 2012\]             |       safety       |             \[Michael et al. 2017\]             |
-|      EPaxos       |               \[Moraru et al. 2013\]               |       safety       |                 \[Sutra 2020\]                  |
-|      EPaxos       |               \[Moraru et al. 2013\]               |       safety       |               \[Whittaker 2021\]                |
-|       Raft        |           \[Ongaro and Ousterhout 2014\]           |    liveness[^6]    |                  \[Hoch 2014\]                  |
-|       Raft        |                  \[Ongaro 2014\]                   |     safety[^7]     |      \[Amos and Zhang 2015; Ongaro 2015\]       |
-|       Raft        |    \[Ongaro and Ousterhout 2014; Ongaro 2014\]     |      liveness      | \[Howard and Abraham 2020; Jensen et al. 2021\] |
-|       hBFT        |                \[Duan et al. 2015\]                |       safety       |            \[Shrestha et al. 2019\]             |
-|    Tendermint     |                  \[Buchman 2016\]                  |      liveness      |           \[Cachin and Vukolić 2017\]           |
-|      CAESAR       |                \[Arun et al. 2017\]                |      liveness      |              \[Enes et al. 2021\]               |
-|      DPaxos       |               \[Nawab et al. 2018\]                |       safety       |            \[Whittaker et al. 2021\]            |
-|   Sync HotStuff   |              \[Abraham et al. 2019\]               | safety & liveness  |            \[Momose and Cruz 2019\]             |
-|      Gasper       |              \[Buterin et al. 2020\]               | safety & liveness  |               \[Neu et al. 2021\]               |
-|        STM        |              \[Imbs and Raynal 2010\]              | safety & liveness  |                \[Belyaev 2010\]                 |
+| Protocol | Reference | Violation | Counter-example |
+|:--:|:--:|:--:|:--:|
+| PBFT[^1] | \[Castro and Liskov 1999\] | liveness | \[Berger et al. 2021\] |
+| Chord | \[Stoica et al. 2001; Liben-Nowell et al. 2002\] | liveness[^2] | \[Zave 2012; Zave 2017\] |
+| Pastry | \[Rowstron and Druschel 2001\] | safety | \[Azmy et al. 2016; Azmy et al. 2018\] |
+| Generalised Paxos | \[Lamport 2005\] | non-triviality[^3] | \[Sutra and Shapiro 2010\] |
+| FaB Paxos | \[Martin and Alvisi 2005; Martin and Alvisi 2006\] | liveness | \[Abraham et al. 2017\] |
+| Multi-Paxos[^4] | \[Chandra et al. 2007\] | safety | \[Michael et al. 2017\] |
+| Zyzzyva | \[Kotla et al. 2007; Kotla et al. 2010\] | safety | \[Abraham et al. 2017\] |
+| CRAQ | \[Terrace and Freedman 2009\] | safety[^5] | \[Whittaker 2020\] |
+| JPaxos | \[Kończak et al. 2011\] | safety | \[Michael et al. 2017\] |
+| VR Revisited | \[Liskov and Cowling 2012\] | safety | \[Michael et al. 2017\] |
+| EPaxos | \[Moraru et al. 2013\] | safety | \[Sutra 2020\] |
+| EPaxos | \[Moraru et al. 2013\] | safety | \[Whittaker 2021\] |
+| Raft | \[Ongaro and Ousterhout 2014\] | liveness[^6] | \[Hoch 2014\] |
+| Raft | \[Ongaro 2014\] | safety[^7] | \[Amos and Zhang 2015; Ongaro 2015\] |
+| Raft | \[Ongaro and Ousterhout 2014; Ongaro 2014\] | liveness | \[Howard and Abraham 2020; Jensen et al. 2021\] |
+| hBFT | \[Duan et al. 2015\] | safety | \[Shrestha et al. 2019\] |
+| Tendermint | \[Buchman 2016\] | liveness | \[Cachin and Vukolić 2017\] |
+| CAESAR | \[Arun et al. 2017\] | liveness | \[Enes et al. 2021\] |
+| DPaxos | \[Nawab et al. 2018\] | safety | \[Whittaker et al. 2021\] |
+| Sync HotStuff | \[Abraham et al. 2019\] | safety & liveness | \[Momose and Cruz 2019\] |
+| Gasper | \[Buterin et al. 2020\] | safety & liveness | \[Neu et al. 2021\] |
+| STM | \[Imbs and Raynal 2010\] | safety & liveness | \[Belyaev 2010\] |
+| FutureBus+ | \[1992\] | safety & liveness | \[Clarke et al. 1993\] |
 
 ## Acknowledgements
 
@@ -109,6 +110,14 @@ An engineering perspective](https://doi.org/10.1145/1281100.1281103).
 *Proceedings of the twenty-sixth annual ACM symposium on Principles of
 distributed computing - PODC ’07*, ACM Press, 398–407.
 
+CLARKE, E.M., GRUMBERG, O., HIRAISHI, H., ET AL. 1993. [Verification of
+the futurebus+ cache coherence protocol](https://CHDL93.pdf). *Computer
+hardware description languages and their applications, proceedings of
+the 11th IFIP WG10.2 international conference on computer hardware
+description languages and their applications - CHDL ’93, sponsored by
+IFIP WG10.2 and in cooperation with IEEE COMPSOC, ottawa, ontario,
+canada, 26-28 april, 1993*, 15–30.
+
 DUAN, S., PEISERT, S., AND LEVITT, K.N. 2015. [hBFT: Speculative
 Byzantine Fault Tolerance with Minimum
 Cost](https://doi.org/10.1109/TDSC.2014.2312331). *IEEE Transactions on
@@ -125,6 +134,9 @@ HOCH, E. 2014. Configuration changes.
 HOWARD, H. AND ABRAHAM, I. 2020. Raft does not Guarantee Liveness in the
 face of Network Faults.
 <https://decentralizedthoughts.github.io/2020-12-12-raft-liveness-full-omission/>.
+
+[IEEE 896.1-1991 IEEE STANDARD FOR FUTUREBUS+(R) – LOGICAL PROTOCOL
+SPECIFICATION](https://standards.ieee.org/ieee/896.1/1269/). 1992.
 
 IMBS, D. AND RAYNAL, M. 2010. Software transactional memories:
 An approach for multicore programming. *The journal of supercomputing*.
